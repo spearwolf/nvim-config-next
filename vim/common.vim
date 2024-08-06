@@ -3,13 +3,12 @@ set encoding=utf-8
 set termencoding=utf-8
 set fileformat=unix
 
-"if exists('g:vscode')
-"  set foldmethod=marker
-"else
-"  set foldmethod=expr
-"  set foldexpr=nvim_treesitter#foldexpr()
-"endif
-set foldmethod=marker
+if exists('g:vscode')
+  set foldmethod=marker
+else
+  set foldmethod=expr
+  set foldexpr=nvim_treesitter#foldexpr()
+endif
 set nofoldenable " Disable folding at startup.
 
 set hlsearch
