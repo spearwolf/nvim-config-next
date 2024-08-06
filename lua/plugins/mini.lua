@@ -4,5 +4,5 @@ return {
   { 'echasnovski/mini.completion', version = false, opts = {} },
   { 'echasnovski/mini.hues', version = false },
   { 'echasnovski/mini.icons', version = false, opts = {} },
-  { 'echasnovski/mini.statusline', version = false, opts = {} },
+  -- { 'echasnovski/mini.statusline', version = false, opts = {} },
 }

@@ -5,9 +5,12 @@ vim.cmd [[
   "colorscheme minicyan
   "colorscheme minischeme
   "colorscheme randomhue
-  colorscheme onedark
+  "colorscheme onedark
   "colorscheme cyberdream
   "colorscheme falcon
+  "colorscheme NeoSolarized
+  "colorscheme cyberdream
+  colorscheme kanagawa
 
   source $HOME/.config/nvim/vim/keys.vim
 ]]
