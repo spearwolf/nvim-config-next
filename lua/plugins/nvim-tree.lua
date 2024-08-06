@@ -63,6 +63,12 @@ return {
     nvimtree.setup({
       on_attach = my_on_attach,
       -- rest of your config
+      sort = {
+        sorter = "case_sensitive",
+      },
+      view = {
+        width = 38,
+      },
     })
   end,
 }
