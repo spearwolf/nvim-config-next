@@ -24,7 +24,7 @@ return {
       });
     end;
 
-    vim.keymap.set('n', '<leader>rg', ripgrep_recursive, {});
-    vim.keymap.set('n', '<leader>rn', rename_local, {});
+    vim.keymap.set('n', '<leader>rg', ripgrep_recursive, { desc = 'ripgrep (recursive)' });
+    vim.keymap.set('n', '<leader>re', rename_local, { desc = 'replace (current file)' });
   end
 }
