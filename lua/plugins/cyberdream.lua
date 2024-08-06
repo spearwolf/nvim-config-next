@@ -13,7 +13,7 @@ return {
     hide_fillchars = false,
 
     -- Modern borderless telescope theme
-    borderless_telescope = true,
+    borderless_telescope = false,
 
     -- Set terminal colors used in `:terminal`
     terminal_colors = true,
