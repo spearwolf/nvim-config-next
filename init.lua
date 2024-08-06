@@ -1,4 +1,4 @@
-require("common")
+require("config.common")
 require("config.lazy")
 
 vim.cmd [[
@@ -6,6 +6,6 @@ vim.cmd [[
   colorscheme minischeme
   "colorscheme randomhue
 
-  source keys.vim
+  source $HOME/.config/nvim/vim/keys.vim
 ]]
 

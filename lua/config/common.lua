@@ -10,6 +10,6 @@ set.compatible = false
 set.termguicolors = true
 
 vim.cmd [[
-  source common.vim
+  source $HOME/.config/nvim/vim/common.vim
 ]]
 
