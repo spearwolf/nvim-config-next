@@ -1,6 +1,6 @@
 [lazyvim](https://www.lazyvim.org/) is great, but is way too noisy for my taste and is somehow not tailor-made for me.
 
-that's why i took [my old nvim config](https://github.com/spearwolf/nvim-config-next), rebuilt it based on [lazy.nvim](https://lazy.folke.io/) and now it's the way i like it :) at least for now ;)
+that's why i took [my old nvim config](https://github.com/spearwolf/nvim-config), rebuilt it based on [lazy.nvim](https://lazy.folke.io/) and now it's the way i like it :) at least for now ;)
 
 ## Install
 
