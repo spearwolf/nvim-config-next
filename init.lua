@@ -41,12 +41,25 @@ vim.keymap.set("i", "<A-k>", "<esc><cmd>m .-2<cr>==gi", { desc = "Move Up" })
 vim.keymap.set("v", "<A-j>", ":m '>+1<cr>gv=gv", { desc = "Move Down" })
 vim.keymap.set("v", "<A-k>", ":m '<-2<cr>gv=gv", { desc = "Move Up" })
 
--- better indenting
-vim.keymap.set("v", "<", "<gv")
-vim.keymap.set("v", ">", ">gv")
-
 -- vscode specials
 if vim.g.vscode then
   require("config.vscode")
+else
+  function goto_next_reference(wrap)
+    if wrap == nil then
+      wrap = vim.o.wrapscan
+      end
+    require('illuminate.goto').goto_next_reference(wrap)
+  end
+
+  function goto_prev_reference(wrap)
+    if wrap == nil then
+      wrap = vim.o.wrapscan
+    end
+    require('illuminate.goto').goto_prev_reference(wrap)
+  end
+
+  vim.keymap.set('n', '<F7>', goto_next_reference, { desc = 'Next Occurence' })
+  vim.keymap.set('n', '<S-F7>', goto_prev_reference, { desc = 'Prev Occurence' })
 end
 
