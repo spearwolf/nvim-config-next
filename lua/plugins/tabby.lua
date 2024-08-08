@@ -1,5 +1,6 @@
 return {
   'nanozuki/tabby.nvim',
+  cond = not vim.g.vscode,
   -- event = 'VimEnter', -- if you want lazy load, see below
   dependencies = 'nvim-tree/nvim-web-devicons',
   config = function()

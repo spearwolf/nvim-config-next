@@ -1,5 +1,6 @@
 return {
   "RRethy/vim-illuminate",
+  cond = not vim.g.vscode,
   config = function()
     -- default configuration
     require('illuminate').configure({

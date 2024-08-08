@@ -1,8 +1,7 @@
 return {
   { 'echasnovski/mini.ai', version = false, opts = {} },
-  { 'echasnovski/mini.base16', version = false },
+  { 'echasnovski/mini.base16', version = false, cond = not vim.g.vscode },
   { 'echasnovski/mini.completion', version = false, opts = {} },
-  { 'echasnovski/mini.hues', version = false },
+  { 'echasnovski/mini.hues', version = false, cond = not vim.g.vscode },
   { 'echasnovski/mini.icons', version = false, opts = {} },
-  -- { 'echasnovski/mini.statusline', version = false, opts = {} },
 }

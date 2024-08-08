@@ -50,7 +50,7 @@ return {
         "yaml",
       },
       sync_install = false,
-      highlight = { enable = true },
+      highlight = { enable = not vim.g.vscode },
       indent = { enable = true },  
     })
   end
