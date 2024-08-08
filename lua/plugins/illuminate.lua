@@ -57,5 +57,22 @@ return {
         -- case_insensitive_regex: sets regex case sensitivity
         case_insensitive_regex = false,
     })
+
+    function goto_next_reference(wrap)
+      if wrap == nil then
+        wrap = vim.o.wrapscan
+        end
+      require('illuminate.goto').goto_next_reference(wrap)
+    end
+
+    function goto_prev_reference(wrap)
+      if wrap == nil then
+        wrap = vim.o.wrapscan
+      end
+      require('illuminate.goto').goto_prev_reference(wrap)
+    end
+
+    vim.keymap.set('n', '<F7>', goto_next_reference, { desc = 'Next Occurence' })
+    -- vim.keymap.set('n', '<S-F7>', goto_prev_reference, { desc = 'Prev Occurence' })
   end,
 }
