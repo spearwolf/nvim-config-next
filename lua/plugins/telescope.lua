@@ -17,6 +17,9 @@ return {
       vim.keymap.set('n', '<M-S-F12>', builtin.lsp_references, { desc = 'List references (current word)' })
 
       vim.keymap.set('n', '<F12>', builtin.lsp_definitions, { desc = 'Goto definition (current word)' })
+
+      vim.keymap.set('n', '<leader>ss', builtin.lsp_document_symbols, { desc = 'Show symbols (buffer)' })
+      vim.keymap.set('n', '<leader>sS', builtin.lsp_workspace_symbols, { desc = 'Show symbols (workspace)' })
     end
 
     vim.keymap.set('n', 'gi', builtin.lsp_implementations, { desc = 'Goto implementation (current word)' })
