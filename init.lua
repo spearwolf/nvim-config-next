@@ -7,7 +7,6 @@ if not vim.g.vscode then
     "colorscheme minischeme
     "colorscheme randomhue
     "colorscheme onedark
-    "colorscheme cyberdream
     "colorscheme falcon
     "colorscheme NeoSolarized
     "colorscheme cyberdream
@@ -18,6 +17,20 @@ end
 vim.cmd [[
   source $HOME/.config/nvim/vim/keys.vim
 ]]
+
+if not vim.g.vscode then
+  vim.g.clipboard = {
+    name = 'OSC 52',
+    copy = {
+      ['+'] = require('vim.ui.clipboard.osc52').copy('+'),
+      ['*'] = require('vim.ui.clipboard.osc52').copy('*'),
+    },
+    paste = {
+      ['+'] = require('vim.ui.clipboard.osc52').paste('+'),
+      ['*'] = require('vim.ui.clipboard.osc52').paste('*'),
+    },
+  }
+end
 
 local lsp_rename = function()
   vim.lsp.buf.rename();

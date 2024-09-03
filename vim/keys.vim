@@ -15,6 +15,18 @@ map <silent> <C-S-c> "+y
 map <silent> <C-S-v> "+P
 imap <silent> <C-S-v> <Esc>l"+Pli
 
+" Copy to clipboard
+vnoremap  <leader>y "+y
+nnoremap  <leader>Y "+yg_
+nnoremap  <leader>y "+y
+nnoremap  <leader>yy "+yy
+
+" Paste from clipboard
+nnoremap <leader>p "+p
+nnoremap <leader>P "+P
+vnoremap <leader>p "+p
+vnoremap <leader>P "+P
+
 " Home + End
 nmap <silent> <Home> gg
 nmap <silent> <End> G
