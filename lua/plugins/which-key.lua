@@ -15,4 +15,5 @@ return {
       desc = "Buffer Local Keymaps (which-key)",
     },
   },
+  cond = not vim.g.vscode,
 }
