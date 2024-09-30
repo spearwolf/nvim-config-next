@@ -10,7 +10,8 @@ if not vim.g.vscode then
     "colorscheme falcon
     "colorscheme NeoSolarized
     "colorscheme cyberdream
-    colorscheme kanagawa
+    "colorscheme kanagawa
+    colorscheme fluoromachine
   ]]
 end
 
