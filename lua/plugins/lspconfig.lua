@@ -4,7 +4,8 @@ return {
   dependencies = {
     "yioneko/nvim-vtsls",
   },
-  config = function () 
+  cond = not vim.g.vscode,
+  config = function ()
     require("lspconfig.configs").vtsls = require("vtsls").lspconfig -- set default server config, optional but recommended
     require("lspconfig").vtsls.setup{
       settings = {
