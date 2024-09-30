@@ -6,8 +6,8 @@ return {
   config = function ()
     require('fluoromachine').setup {
       glow = true,
-      -- theme = 'fluoromachine',
-      theme = 'delta',
+      theme = 'fluoromachine',
+      -- theme = 'delta',
       -- theme = 'retrowave',
       transparent = true,
     }

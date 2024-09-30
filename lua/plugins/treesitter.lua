@@ -1,6 +1,7 @@
 return {
   "nvim-treesitter/nvim-treesitter",
   build = ":TSUpdate",
+  -- event = { "BufReadPre", "BufNewFile" },
   config = function () 
     local configs = require("nvim-treesitter.configs")
 
@@ -52,6 +53,15 @@ return {
       sync_install = false,
       highlight = { enable = not vim.g.vscode },
       indent = { enable = true },  
+      incremental_selection = {
+        enable = true,
+        keymaps = {
+          init_selection = "<cr>",
+          node_incremental = "<m-right>",
+          scope_incremental = "<m-up>",
+          node_decremental = "<m-left>",
+        },
+      },
     })
   end
 }
