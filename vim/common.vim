@@ -26,8 +26,12 @@ set autoread
 " No need to show mode
 set noshowmode
 
-" Always show the signcolumn
-set signcolumn=yes
+if ! exists('g:vscode')
+  " Always show the signcolumn
+  set signcolumn=yes
+  " Always show line numbers
+  set number
+endif
 
 " Tab settings
 set tabstop=2

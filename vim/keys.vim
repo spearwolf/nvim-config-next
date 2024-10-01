@@ -1,6 +1,7 @@
 if ! exists('g:vscode')
     " nvim-tree
     map <silent> <F3> <Esc>:NvimTreeToggle<CR>
+    map <silent> <F4> <Esc>:AerialToggle!<CR>
     nmap <silent> <F5> <Esc>:cd %:p:h<CR>:pwd<CR>
 
     " Tabs
@@ -8,6 +9,9 @@ if ! exists('g:vscode')
     map <silent> <M-S-w> <Esc>:tabclose<CR>
     map <silent> <M-S-Left> <Esc>:tabprevious<CR>
     map <silent> <M-S-Right> <Esc>:tabnext<CR>
+
+    map <silent> <M-S-t> <Esc>:tabnew<CR>
+    nmap <silent> <C-K>s <Esc>:Telescope aerial<cr>
 endif
 
 " Copy'n'Paste

@@ -11,7 +11,8 @@ if not vim.g.vscode then
     "colorscheme NeoSolarized
     "colorscheme cyberdream
     "colorscheme kanagawa
-    colorscheme fluoromachine
+    "colorscheme fluoromachine
+    colorscheme lackluster-hack
   ]]
 end
 
