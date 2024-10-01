@@ -3,24 +3,27 @@ return {
   branch = '0.1.x',
   dependencies = { 'nvim-lua/plenary.nvim' },
   config = function()
-    require("telescope").setup({
-      extensions = {
-        aerial = {
-          -- How to format the symbols
-          format_symbol = function(symbol_path, filetype)
-            if filetype == "json" or filetype == "yaml" then
-              return table.concat(symbol_path, ".")
-            else
-              return symbol_path[#symbol_path]
-            end
-          end,
-          -- Available modes: symbols, lines, both
-          show_columns = "both",
-        },
-      },
-    })
 
-    require("telescope").load_extension("aerial")
+    if not vim.g.vscode then
+      require("telescope").setup({
+        extensions = {
+          aerial = {
+            -- How to format the symbols
+            format_symbol = function(symbol_path, filetype)
+              if filetype == "json" or filetype == "yaml" then
+                return table.concat(symbol_path, ".")
+              else
+                return symbol_path[#symbol_path]
+              end
+            end,
+            -- Available modes: symbols, lines, both
+            show_columns = "both",
+          },
+        },
+      })
+
+      require("telescope").load_extension("aerial")
+    end
 
     local builtin = require('telescope.builtin')
 
