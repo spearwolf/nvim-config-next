@@ -44,6 +44,11 @@ require("lazy").setup({
     concurrency = 6,
     frequency = 3600,
   },
+  -- automatically check for config file changes and reload the ui
+  change_detection = {
+    enabled = true,
+    notify = false, -- get a notification when changes are found
+  },
   ui = {
     wrap = true,
     border = "none",
