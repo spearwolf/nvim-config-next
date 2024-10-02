@@ -1,8 +1,8 @@
 if ! exists('g:vscode')
-    " nvim-tree
     map <silent> <F3> <Esc>:NvimTreeToggle<CR>
     map <silent> <F4> <Esc>:AerialToggle!<CR>
     nmap <silent> <F5> <Esc>:cd %:p:h<CR>:pwd<CR>
+    nmap <silent> <F6> <Esc>:Telescope noice<CR>
 
     " Tabs
     map <silent> <M-S-t> <Esc>:tabnew<CR>
