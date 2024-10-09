@@ -12,6 +12,8 @@ if ! exists('g:vscode')
 
     map <silent> <M-S-t> <Esc>:tabnew<CR>
     nmap <silent> <C-K>s <Esc>:Telescope aerial<cr>
+
+    nmap <silent> <Leader>f <Esc>:Prettier<CR>
 endif
 
 " Copy'n'Paste
