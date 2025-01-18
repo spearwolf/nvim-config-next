@@ -1,27 +1,53 @@
 require("config.common")
 require("config.lazy")
 
-if not vim.g.vscode then
+if vim.g.neovide then
   vim.cmd [[
-    "colorscheme minicyan
-    "colorscheme minischeme
-    "colorscheme randomhue
-    "colorscheme onedark
-    "colorscheme falcon
-    "colorscheme NeoSolarized
-    "colorscheme cyberdream
-    "colorscheme kanagawa
-    "colorscheme kanagawa-dragon
-    colorscheme fluoromachine
-    "colorscheme lackluster-hack
+    set guifont=JetBrainsMono\ Nerd\ Font:h13
+    let g:neovide_transparency = 0.8
+    let g:neovide_normal_opacity = 0.8
+    let g:neovide_floating_blur_amount_x = 2.0
+    let g:neovide_floating_blur_amount_y = 2.0
   ]]
+end
+
+if not vim.g.vscode then
+  if vim.g.neovide then
+    vim.cmd [[
+      "colorscheme minicyan
+      "colorscheme minischeme
+      colorscheme randomhue
+      "colorscheme onedark
+      "colorscheme falcon
+      "colorscheme NeoSolarized
+      "colorscheme cyberdream
+      "colorscheme kanagawa
+      "colorscheme kanagawa-dragon
+      "colorscheme fluoromachine
+      "colorscheme lackluster-hack
+    ]]
+  else
+    vim.cmd [[
+      "colorscheme minicyan
+      "colorscheme minischeme
+      "colorscheme randomhue
+      "colorscheme onedark
+      "colorscheme falcon
+      "colorscheme NeoSolarized
+      "colorscheme cyberdream
+      "colorscheme kanagawa
+      "colorscheme kanagawa-dragon
+      colorscheme fluoromachine
+      "colorscheme lackluster-hack
+    ]]
+  end
 end
 
 vim.cmd [[
   source $HOME/.config/nvim/vim/keys.vim
 ]]
 
-if not vim.g.vscode then
+if not vim.g.vscode and not vim.g.neovide then
   vim.g.clipboard = {
     name = 'OSC 52',
     copy = {
