@@ -4,8 +4,8 @@ require("config.lazy")
 if vim.g.neovide then
   vim.cmd [[
     set guifont=JetBrainsMono\ Nerd\ Font:h13
-    let g:neovide_transparency = 0.8
-    let g:neovide_normal_opacity = 0.8
+    let g:neovide_transparency = 0.9
+    let g:neovide_normal_opacity = 0.9
     let g:neovide_floating_blur_amount_x = 2.0
     let g:neovide_floating_blur_amount_y = 2.0
   ]]
