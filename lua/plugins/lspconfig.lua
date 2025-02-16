@@ -18,62 +18,54 @@ return {
     require("lspconfig.configs").vtsls = require("vtsls").lspconfig -- set default server config, optional but recommended
     require("lspconfig").vtsls.setup{}
 
-    ---
-    -- Function to retrieve console output
-    -- 
-    function exec(cmd, raw)
-      local handle = assert(io.popen(cmd, 'r'))
-      local output = assert(handle:read('*a'))
+    local handle = io.popen("npm config get prefix")
+    local node_prefix = handle:read("*a"):gsub("^%s*(.-)%s*$", "%1") 
+    handle:close()
 
-      handle:close()
+    local global_tsdk_lib = node_prefix .. '/lib/node_modules/@astrojs/language-server/node_modules/typescript/lib'
 
-      if raw then 
-        return output 
-      end
-
-      output = string.gsub(
-        string.gsub(
-          string.gsub(output, '^%s+', ''), 
-          '%s+$', 
-          ''
-        ), 
-        '[\n\r]+',
-        ' '
-      )
-
-      return output
+    if not vim.fn.isdirectory(global_tsdk_lib) then
+      print('[lspconfiog/astro] Could not find typescript server path: did you forgot to install @astrojs/language-server npm package?')
     end
 
-    -- local lsp_util = require("lspconfig.util")
-    --
+    -- print('Using global npm prefix: ' .. node_prefix)
+    -- print('Using global tsdk lib path: ' .. global_tsdk_lib)
+
+    local function get_typescript_server_path(root_dir)
+      local project_root = vim.fs.dirname(vim.fs.find('node_modules', { path = root_dir, upward = true })[1])
+
+      if project_root then
+        local project_tsdk_lib = project_root:gsub("^%s*(.-)%s*$", "%1")  .. '/node_modules/typescript/lib'
+
+        if vim.uv.fs_stat(project_tsdk_lib .. 'typescript.js') then
+          -- print('Using local typescript server path: ' .. project_tsdk_lib)
+          return project_tsdk_lib
+        end
+      end
+
+      if vim.fn.isdirectory(global_tsdk_lib) then
+        -- print('Using global typescript server path: ' .. global_tsdk_lib)
+        return global_tsdk_lib
+      end
+
+      return ''
+    end
+
     require("lspconfig").astro.setup{
       -- filetypes = { "astro" },
 
-      -- root_dir = function(fname)
-      --   return lsp_util.root_pattern("tsconfig.json", "jsconfig.json")(fname)
-      --     or lsp_util.root_pattern("package.json", ".git")(fname)
-      -- end,
-
       init_options = {
         typescript = {
-          tsdk = "/home/spw/.config/nvm/versions/node/v22.13.1/lib/node_modules/@vtsls/language-server/node_modules/typescript/lib",
+          -- tsdk = "/var/home/spw/.config/nvm/versions/node/v22.13.1/lib/node_modules/@vtsls/language-server/node_modules/typescript/lib",
         },
       },
-    }
 
-      -- settings = {
-      --   typescript = {
-      --     inlayHints = {
-      --       parameterNames = { enabled = "literals" },
-      --       parameterTypes = { enabled = true },
-      --       variableTypes = { enabled = true },
-      --       propertyDeclarationTypes = { enabled = true },
-      --       functionLikeReturnTypes = { enabled = true },
-      --       enumMemberValues = { enabled = true },
-      --     }
-      --   },
-      -- }
-    -- }
+      on_new_config = function(new_config, new_root_dir)
+        if vim.tbl_get(new_config.init_options, 'typescript') and not new_config.init_options.typescript.tsdk then
+          new_config.init_options.typescript.tsdk = get_typescript_server_path(new_root_dir)
+        end
+      end,
+    }
 
     vim.lsp.commands["editor.action.showReferences"] = function(command, ctx)
       local locations = command.arguments[3]
