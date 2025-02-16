@@ -1,6 +1,4 @@
 return {
-  -- "williamboman/mason.nvim",
-  -- "williamboman/mason-lspconfig.nvim",
   "neovim/nvim-lspconfig",
 
   dependencies = {
@@ -17,22 +15,50 @@ return {
   priority = 100,
 
   config = function ()
-    -- require("mason").setup()
-    -- require("mason-lspconfig").setup{
-    --   -- ensure_installed = { "astro", "vtsls" },
-    --   -- automatic_installation = true,
-    -- }
-
     require("lspconfig.configs").vtsls = require("vtsls").lspconfig -- set default server config, optional but recommended
-    require("lspconfig").vtsls.setup{
-      -- autostart = true,
-    }
+    require("lspconfig").vtsls.setup{}
 
+    ---
+    -- Function to retrieve console output
+    -- 
+    function exec(cmd, raw)
+      local handle = assert(io.popen(cmd, 'r'))
+      local output = assert(handle:read('*a'))
+
+      handle:close()
+
+      if raw then 
+        return output 
+      end
+
+      output = string.gsub(
+        string.gsub(
+          string.gsub(output, '^%s+', ''), 
+          '%s+$', 
+          ''
+        ), 
+        '[\n\r]+',
+        ' '
+      )
+
+      return output
+    end
+
+    -- local lsp_util = require("lspconfig.util")
+    --
     require("lspconfig").astro.setup{
-      -- autostart = true,
-       -- capabilities = capabilities,
-       -- on_attach = on_attach,
-       -- filetypes = { "astro" },
+      -- filetypes = { "astro" },
+
+      -- root_dir = function(fname)
+      --   return lsp_util.root_pattern("tsconfig.json", "jsconfig.json")(fname)
+      --     or lsp_util.root_pattern("package.json", ".git")(fname)
+      -- end,
+
+      init_options = {
+        typescript = {
+          tsdk = "/home/spw/.config/nvm/versions/node/v22.13.1/lib/node_modules/@vtsls/language-server/node_modules/typescript/lib",
+        },
+      },
     }
 
       -- settings = {
