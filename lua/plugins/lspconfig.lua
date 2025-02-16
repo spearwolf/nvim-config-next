@@ -17,23 +17,22 @@ return {
   priority = 100,
 
   config = function ()
-    require("lspconfig.configs").vtsls = require("vtsls").lspconfig -- set default server config, optional but recommended
-
     -- require("mason").setup()
     -- require("mason-lspconfig").setup{
-    --   ensure_installed = { "astro", "vtsls" },
-    --   automatic_installation = false,
+    --   -- ensure_installed = { "astro", "vtsls" },
+    --   -- automatic_installation = true,
     -- }
+
+    require("lspconfig.configs").vtsls = require("vtsls").lspconfig -- set default server config, optional but recommended
+    require("lspconfig").vtsls.setup{
+      -- autostart = true,
+    }
 
     require("lspconfig").astro.setup{
       -- autostart = true,
        -- capabilities = capabilities,
        -- on_attach = on_attach,
        -- filetypes = { "astro" },
-    }
-
-    require("lspconfig").vtsls.setup{
-      -- autostart = true,
     }
 
       -- settings = {
