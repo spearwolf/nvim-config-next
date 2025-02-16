@@ -1,5 +1,6 @@
 return {
   "antosha417/nvim-lsp-file-operations",
+  lazy = false,
   cond = not vim.g.vscode,
   dependencies = {
     "nvim-lua/plenary.nvim",

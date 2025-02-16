@@ -16,6 +16,7 @@ return {
     },
 
     lazy = false,
+    priority = 90,
 
     config = function()
       local cmp = require'cmp'
