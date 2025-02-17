@@ -3,11 +3,11 @@ require("config.lazy")
 
 if vim.g.neovide then
   vim.cmd [[
-    set guifont=JetBrainsMono\ Nerd\ Font:h13
-    let g:neovide_transparency = 0.9
-    let g:neovide_normal_opacity = 0.9
-    let g:neovide_floating_blur_amount_x = 2.0
-    let g:neovide_floating_blur_amount_y = 2.0
+    set guifont=JetBrainsMono\ Nerd\ Font:h11
+    let g:neovide_transparency = 0.93
+    "let g:neovide_normal_opacity = 1.0
+    "let g:neovide_floating_blur_amount_x = 16.0
+    "let g:neovide_floating_blur_amount_y = 16.0
   ]]
 end
 
@@ -16,13 +16,13 @@ if not vim.g.vscode then
     vim.cmd [[
       "colorscheme minicyan
       "colorscheme minischeme
-      colorscheme randomhue
+      "colorscheme randomhue
       "colorscheme onedark
       "colorscheme falcon
       "colorscheme NeoSolarized
       "colorscheme cyberdream
       "colorscheme kanagawa
-      "colorscheme kanagawa-dragon
+      colorscheme kanagawa-dragon
       "colorscheme fluoromachine
       "colorscheme lackluster-hack
     ]]

@@ -3,6 +3,7 @@ if ! exists('g:vscode')
     map <silent> <F4> <Esc>:AerialToggle!<CR>
     nmap <silent> <F5> <Esc>:cd %:p:h<CR>:pwd<CR>
     nmap <silent> <F6> <Esc>:Telescope noice<CR>
+    nmap <silent> <F8> <Esc>:LspRestart<CR>
 
     " Tabs
     map <silent> <M-S-t> <Esc>:tabnew<CR>
@@ -13,7 +14,8 @@ if ! exists('g:vscode')
     map <silent> <M-S-t> <Esc>:tabnew<CR>
     nmap <silent> <C-K>s <Esc>:Telescope aerial<cr>
 
-    nmap <silent> <Leader>f <Esc>:Prettier<CR>
+    "nmap <silent> <Leader>f <Esc>:Prettier<CR>
+    "nmap <silent> <C-S-i> <Esc>:Prettier<CR>
 endif
 
 " Copy'n'Paste
