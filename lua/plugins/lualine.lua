@@ -6,8 +6,8 @@ return {
       options = {
         icons_enabled = true,
         -- theme = 'nightfly',
-        -- theme = 'lackluster',
-        theme = 'powerline_dark',
+        theme = 'lackluster',
+        -- theme = 'powerline_dark',
         component_separators = { left = '', right = ''},
         section_separators = { left = '', right = ''},
         disabled_filetypes = {
