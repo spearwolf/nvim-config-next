@@ -12,9 +12,9 @@ if not vim.g.vscode then
 
       "colorscheme minicyan
       "colorscheme minischeme
-      "colorscheme randomhue
+      colorscheme randomhue
       "colorscheme onedark
-      colorscheme terafox
+      "colorscheme terafox
       "colorscheme falcon
       "colorscheme NeoSolarized
       "colorscheme cyberdream
@@ -29,7 +29,7 @@ if not vim.g.vscode then
     vim.cmd [[
       "colorscheme minicyan
       "colorscheme minischeme
-      colorscheme randomhue
+      colorscheme terafox
       "colorscheme onedark
       "colorscheme falcon
       "colorscheme NeoSolarized
