@@ -21,7 +21,7 @@ endif
 " Copy'n'Paste
 nmap <silent> <C-S-c> "+y
 vmap <silent> <C-S-c> "+y
-map <silent> <C-S-v> O<Esc>"+p
+map <silent> <C-S-v> "+p
 imap <silent> <C-S-v> <Esc>"+pi
 
 " Copy to clipboard
