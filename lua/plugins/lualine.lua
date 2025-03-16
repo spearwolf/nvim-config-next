@@ -5,8 +5,13 @@ return {
     require('lualine').setup {
       options = {
         icons_enabled = true,
+        -- https://github.com/nvim-lualine/lualine.nvim/blob/master/THEMES.md
+        theme = 'onedark',
+        -- theme = 'papercolor_dark',
+        -- theme = 'solarized_dark',
+        -- theme = 'horizon',
         -- theme = 'nightfly',
-        theme = 'lackluster',
+        -- theme = 'lackluster',
         -- theme = 'powerline_dark',
         component_separators = { left = '', right = ''},
         section_separators = { left = '', right = ''},

@@ -19,9 +19,10 @@ if ! exists('g:vscode')
 endif
 
 " Copy'n'Paste
-map <silent> <C-S-c> "+y
-map <silent> <C-S-v> "+P
-imap <silent> <C-S-v> <Esc>l"+Pli
+nmap <silent> <C-S-c> "+y
+vmap <silent> <C-S-c> "+y
+map <silent> <C-S-v> O<Esc>"+p
+imap <silent> <C-S-v> <Esc>"+pi
 
 " Copy to clipboard
 vnoremap  <leader>y "+y

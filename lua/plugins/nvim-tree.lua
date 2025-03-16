@@ -68,7 +68,7 @@ return {
         sorter = "case_sensitive",
       },
       view = {
-        width = 35,
+        width = 42,
       },
       filters = {
         dotfiles = false,
