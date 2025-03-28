@@ -1,6 +1,5 @@
 scriptencoding utf-8
 set encoding=utf-8
-set termencoding=utf-8
 set fileformat=unix
 
 if exists('g:vscode')
