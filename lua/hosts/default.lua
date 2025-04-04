@@ -5,7 +5,7 @@ if not vim.g.vscode then
     vim.cmd [[
       set guifont=JetBrainsMono\ Nerd\ Font:h11
 
-      let g:neovide_transparency = 0.94
+      let g:neovide_opacity = 0.94
       "let g:neovide_normal_opacity = 1.0
       "let g:neovide_floating_blur_amount_x = 16.0
       "let g:neovide_floating_blur_amount_y = 16.0
