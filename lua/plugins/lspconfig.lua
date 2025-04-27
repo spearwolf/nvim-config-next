@@ -4,7 +4,7 @@ return {
   dependencies = {
     "yioneko/nvim-vtsls",
     -- eslint & prettier
-    "jose-elias-alvarez/null-ls.nvim",
+    "nvimtools/none-ls.nvim", -- "jose-elias-alvarez/null-ls.nvim",
     "MunifTanjim/eslint.nvim",
     "MunifTanjim/prettier.nvim",
   },
