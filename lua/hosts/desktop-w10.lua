@@ -21,8 +21,8 @@ if not vim.g.vscode then
       "colorscheme kanagawa-dragon
       "colorscheme fluoromachine
       "colorscheme lackluster-hack
-      "colorscheme kanagawa-paper-ink
-      colorscheme nordic
+      colorscheme kanagawa-paper-ink
+      "colorscheme nordic
     ]]
   else
     -- nvim -----------------------------------------
