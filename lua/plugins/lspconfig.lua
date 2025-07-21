@@ -22,7 +22,8 @@ return {
     local node_prefix = handle:read("*a"):gsub("^%s*(.-)%s*$", "%1") 
     handle:close()
 
-    local global_tsdk_lib = node_prefix .. '/lib/node_modules/@astrojs/language-server/node_modules/typescript/lib'
+    -- local global_tsdk_lib = node_prefix .. '/lib/node_modules/@astrojs/language-server/node_modules/typescript/lib'
+    local global_tsdk_lib = node_prefix .. '/lib/node_modules/typescript/lib'
 
     if not vim.fn.isdirectory(global_tsdk_lib) then
       print('[lspconfiog/astro] Could not find typescript server path: did you forgot to install @astrojs/language-server npm package?')
