@@ -11,8 +11,11 @@ if ! exists('g:vscode')
     map <silent> <M-S-Left> <Esc>:tabprevious<CR>
     map <silent> <M-S-Right> <Esc>:tabnext<CR>
 
-    map <silent> <M-S-t> <Esc>:tabnew<CR>
-    nmap <silent> <C-K>s <Esc>:Telescope aerial<cr>
+    nnoremap <M-S-t> <cmd>tabnew<cr>
+    nnoremap <C-S-p> <cmd>Telescope aerial<cr>
+    nnoremap <M-S-p> <cmd>Telescope buffers<cr>
+
+    nnoremap <C-S-i> <cmd>Prettier<cr>
 
     "nmap <silent> <Leader>f <Esc>:Prettier<CR>
     "nmap <silent> <C-S-i> <Esc>:Prettier<CR>
@@ -25,10 +28,10 @@ map <silent> <C-S-v> "+p
 imap <silent> <C-S-v> <Esc>"+pi
 
 " Copy to clipboard
-vnoremap  <leader>y "+y
-nnoremap  <leader>Y "+yg_
-nnoremap  <leader>y "+y
-nnoremap  <leader>yy "+yy
+vnoremap <leader>y "+y
+nnoremap <leader>Y "+yg_
+nnoremap <leader>y "+y
+nnoremap <leader>yy "+yy
 
 " Paste from clipboard
 nnoremap <leader>p "+p

@@ -23,7 +23,8 @@ if not vim.g.vscode then
       "colorscheme lackluster-hack
       "colorscheme nordic
       "colorscheme kanagawa-paper-ink
-      colorscheme melange
+      "colorscheme melange
+      colorscheme tokyonight-night
     ]]
   else
     -- nvim -----------------------------------------
