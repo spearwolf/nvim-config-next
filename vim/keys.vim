@@ -25,7 +25,7 @@ endif
 nmap <silent> <C-S-c> "+y
 vmap <silent> <C-S-c> "+y
 map <silent> <C-S-v> "+p
-imap <silent> <C-S-v> <Esc>"+pi
+imap <silent> <C-S-v> <Esc>"+pa
 
 " Copy to clipboard
 vnoremap <leader>y "+y
