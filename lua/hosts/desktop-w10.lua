@@ -5,7 +5,7 @@ if not vim.g.vscode then
     vim.cmd [[
       set guifont=JetBrainsMono\ Nerd\ Font:h11
 
-      let g:neovide_opacity = 0.94
+      let g:neovide_opacity = 0.97
       "let g:neovide_normal_opacity = 1.0
       "let g:neovide_floating_blur_amount_x = 16.0
       "let g:neovide_floating_blur_amount_y = 16.0
@@ -24,7 +24,8 @@ if not vim.g.vscode then
       "colorscheme nordic
       "colorscheme kanagawa-paper-ink
       "colorscheme melange
-      colorscheme tokyonight-night
+      "colorscheme tokyonight-night
+      colorscheme horizon
     ]]
   else
     -- nvim -----------------------------------------
@@ -42,8 +43,8 @@ if not vim.g.vscode then
       "colorscheme cyberdream
       "colorscheme kanagawa-paper-ink
       "colorscheme fluoromachine
-      "colorscheme melange
-      colorscheme dracula
+      colorscheme melange
+      "colorscheme dracula
     ]]
   end
 end
