@@ -67,7 +67,9 @@ else
     require('illuminate.goto').goto_prev_reference(wrap)
   end
 
-  vim.keymap.set('n', '<F7>', goto_next_reference, { desc = 'Next Occurence' })
-  -- vim.keymap.set('n', '<S-F7>', goto_prev_reference, { desc = 'Prev Occurence' })
+  vim.keymap.set('n', '<f7>', goto_next_reference, { desc = 'Next Occurence' })
+  vim.keymap.set('n', '<S-F7>', goto_prev_reference, { desc = 'Prev Occurence' })
+  -- alacritty workaround (check with Insert-Mode:Ctrl-V and then S-F7)
+  vim.keymap.set('n', '<F19>', goto_prev_reference, { desc = 'Prev Occurence' })
 end
 

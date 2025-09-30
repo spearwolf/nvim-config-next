@@ -1,9 +1,7 @@
 return {
-  "neovim/nvim-lspconfig",
+  "yioneko/nvim-vtsls",
 
   dependencies = {
-    "yioneko/nvim-vtsls",
-    -- eslint & prettier
     "nvimtools/none-ls.nvim", -- "jose-elias-alvarez/null-ls.nvim",
     "MunifTanjim/eslint.nvim",
     "MunifTanjim/prettier.nvim",
@@ -15,8 +13,7 @@ return {
   priority = 100,
 
   config = function ()
-    require("lspconfig.configs").vtsls = require("vtsls").lspconfig -- set default server config, optional but recommended
-    require("lspconfig").vtsls.setup{}
+    vim.lsp.config('vtsls', require("vtsls").lspconfig) -- set default server config, optional but recommended
 
     local handle = io.popen("npm config get prefix")
     local node_prefix = handle:read("*a"):gsub("^%s*(.-)%s*$", "%1") 
@@ -52,8 +49,8 @@ return {
       return ''
     end
 
-    require("lspconfig").astro.setup{
-      -- filetypes = { "astro" },
+    vim.lsp.config('astro', {
+      filetypes = { "astro" },
 
       init_options = {
         typescript = {
@@ -66,7 +63,7 @@ return {
           new_config.init_options.typescript.tsdk = get_typescript_server_path(new_root_dir)
         end
       end,
-    }
+    })
 
     vim.lsp.commands["editor.action.showReferences"] = function(command, ctx)
       local locations = command.arguments[3]
