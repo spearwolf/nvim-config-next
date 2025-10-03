@@ -4,7 +4,7 @@ return {
   dependencies = {
     "nvimtools/none-ls.nvim", -- "jose-elias-alvarez/null-ls.nvim",
     "MunifTanjim/eslint.nvim",
-    "MunifTanjim/prettier.nvim",
+    -- "MunifTanjim/prettier.nvim",
   },
 
   cond = not vim.g.vscode,
@@ -13,6 +13,8 @@ return {
   priority = 100,
 
   config = function ()
+    vim.lsp.enable('biome')
+
     vim.lsp.config('vtsls', require("vtsls").lspconfig) -- set default server config, optional but recommended
 
     local handle = io.popen("npm config get prefix")
@@ -79,7 +81,7 @@ return {
 
     local null_ls = require("null-ls")
     local eslint = require("eslint")
-    local prettier = require("prettier")
+    -- local prettier = require("prettier")
 
     null_ls.setup({
       on_attach = function(client, bufnr)
@@ -117,47 +119,47 @@ return {
       },
     })
 
-    prettier.setup({
-      bin = 'prettier', -- or `'prettierd'` (v0.23.3+)
-      filetypes = {
-        "astro",
-        "css",
-        "graphql",
-        "html",
-        "javascript",
-        "javascriptreact",
-        "json",
-        "less",
-        "markdown",
-        "scss",
-        "typescript",
-        "typescriptreact",
-        "yaml",
-      },
-      cli_options = {
-        arrow_parens = "avoid",
-        bracket_spacing = false,
-        bracket_same_line = false,
-        -- embedded_language_formatting = "auto",
-        end_of_line = "lf",
-        html_whitespace_sensitivity = "strict",
-        -- jsx_bracket_same_line = false,
-        -- jsx_single_quote = false,
-        -- print_width = 80,
-        -- prose_wrap = "preserve",
-        quote_props = "as-needed",
-        semi = true,
-        -- single_attribute_per_line = false,
-        single_quote = true,
-        -- tab_width = 2,
-        trailing_comma = "all",
-        -- use_tabs = false,
-        -- vue_indent_script_and_style = false,
-        experimental_ternaries = "avoid",
-        astro_allow_shorthand = true,
-        astro_skip_frontmatter = true,
-      },
-    })
+    -- prettier.setup({
+    --   bin = 'prettier', -- or `'prettierd'` (v0.23.3+)
+    --   filetypes = {
+    --     "astro",
+    --     "css",
+    --     "graphql",
+    --     "html",
+    --     "javascript",
+    --     "javascriptreact",
+    --     "json",
+    --     "less",
+    --     "markdown",
+    --     "scss",
+    --     "typescript",
+    --     "typescriptreact",
+    --     "yaml",
+    --   },
+    --   cli_options = {
+    --     arrow_parens = "avoid",
+    --     bracket_spacing = false,
+    --     bracket_same_line = false,
+    --     -- embedded_language_formatting = "auto",
+    --     end_of_line = "lf",
+    --     html_whitespace_sensitivity = "strict",
+    --     -- jsx_bracket_same_line = false,
+    --     -- jsx_single_quote = false,
+    --     -- print_width = 80,
+    --     -- prose_wrap = "preserve",
+    --     quote_props = "as-needed",
+    --     semi = true,
+    --     -- single_attribute_per_line = false,
+    --     single_quote = true,
+    --     -- tab_width = 2,
+    --     trailing_comma = "all",
+    --     -- use_tabs = false,
+    --     -- vue_indent_script_and_style = false,
+    --     experimental_ternaries = "avoid",
+    --     astro_allow_shorthand = true,
+    --     astro_skip_frontmatter = true,
+    --   },
+    -- })
 
   end,
 }
