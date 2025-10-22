@@ -3,8 +3,8 @@ if not vim.g.vscode then
     -- neovide --------------------------------------
     --
     vim.cmd [[
-      set guifont=JetBrainsMono\ Nerd\ Font:h11
-      "set guifont=Monaspace\ Xenon:h12
+      "set guifont=JetBrainsMono_Nerd_Font,Noto_Color_Emoji:h11
+      set guifont=Monaspace_Neon,Noto_Color_Emoji:h12
 
       "let g:neovide_opacity = 0.97
       let g:neovide_opacity = 0.93
