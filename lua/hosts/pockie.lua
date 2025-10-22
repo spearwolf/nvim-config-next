@@ -3,12 +3,14 @@ if not vim.g.vscode then
     -- neovide --------------------------------------
     --
     vim.cmd [[
-      set guifont=JetBrainsMono\ Nerd\ Font:h14
-
-      let g:neovide_transparency = 0.93
       "let g:neovide_normal_opacity = 1.0
       "let g:neovide_floating_blur_amount_x = 16.0
       "let g:neovide_floating_blur_amount_y = 16.0
+      let g:neovide_fullscreen = v:true
+      let g:neovide_transparency = 0.93
+      let g:neovide_cursor_animate_in_insert_mode = v:true
+
+      set guifont=JetBrainsMono\ Nerd\ Font:h14
 
       "colorscheme minicyan
       "colorscheme minischeme
@@ -18,9 +20,9 @@ if not vim.g.vscode then
       "colorscheme falcon
       "colorscheme NeoSolarized
       "colorscheme cyberdream
-      colorscheme kanagawa
+      "colorscheme kanagawa
       "colorscheme kanagawa-dragon
-      "colorscheme fluoromachine
+      colorscheme fluoromachine
       "colorscheme lackluster-hack
     ]]
   else
@@ -37,9 +39,9 @@ if not vim.g.vscode then
       "colorscheme kanagawa
       "colorscheme kanagawa-dragon
       "colorscheme fluoromachine
-      colorscheme lackluster-hack
+      "colorscheme lackluster-hack
+      colorscheme tokyonight
     ]]
   end
 end
-
 
