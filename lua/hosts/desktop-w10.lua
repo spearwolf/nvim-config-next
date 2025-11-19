@@ -3,11 +3,11 @@ if not vim.g.vscode then
     -- neovide --------------------------------------
     --
     vim.cmd [[
-      "set guifont=JetBrainsMono_Nerd_Font,Noto_Color_Emoji:h11
-      set guifont=Monaspace_Neon,Noto_Color_Emoji:h12
+      set guifont=JetBrainsMono_Nerd_Font,Noto_Color_Emoji:h12
+      "set guifont=Monaspace_Neon,Noto_Color_Emoji:h12
 
       "let g:neovide_opacity = 0.97
-      let g:neovide_opacity = 0.93
+      let g:neovide_opacity = 0.95
       "let g:neovide_normal_opacity = 1.0
       "let g:neovide_floating_blur_amount_x = 16.0
       "let g:neovide_floating_blur_amount_y = 16.0
@@ -26,9 +26,10 @@ if not vim.g.vscode then
       "colorscheme nordic
       "colorscheme nordfox
       "colorscheme kanagawa-paper-ink
-      colorscheme witch-dark
+      "colorscheme witch-dark
       "colorscheme melange
       "colorscheme tokyonight-night
+      colorscheme tokyonight-storm
       "colorscheme horizon
     ]]
   else
