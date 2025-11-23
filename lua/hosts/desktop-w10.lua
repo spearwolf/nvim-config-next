@@ -3,7 +3,7 @@ if not vim.g.vscode then
     -- neovide --------------------------------------
     --
     vim.cmd [[
-      set guifont=JetBrainsMono_Nerd_Font,Noto_Color_Emoji:h12
+      set guifont=JetBrainsMono_Nerd_Font,Noto_Color_Emoji:h11
       "set guifont=Monaspace_Neon,Noto_Color_Emoji:h12
 
       "let g:neovide_opacity = 0.97
@@ -28,8 +28,8 @@ if not vim.g.vscode then
       "colorscheme kanagawa-paper-ink
       "colorscheme witch-dark
       "colorscheme melange
-      "colorscheme tokyonight-night
-      colorscheme tokyonight-storm
+      colorscheme tokyonight-night
+      "colorscheme tokyonight-storm
       "colorscheme horizon
     ]]
   else
@@ -41,17 +41,17 @@ if not vim.g.vscode then
       "colorscheme randomhue
       "colorscheme onedark
       "colorscheme falcon
-      "colorscheme NeoSolarized
-      "colorscheme kanagawa
-      "colorscheme kanagawa-dragon
+      colorscheme NeoSolarized
       "colorscheme horizon
       "colorscheme tokyonight-storm
       "colorscheme lackluster-hack
       "colorscheme cyberdream
+      "colorscheme kanagawa
       "colorscheme kanagawa-paper-ink
+      "colorscheme kanagawa-dragon
       "colorscheme fluoromachine
       "colorscheme melange
-      colorscheme dracula
+      "colorscheme dracula
       "colorscheme dayfox
       "colorscheme witch-light
     ]]
