@@ -41,11 +41,11 @@ if not vim.g.vscode then
       "colorscheme randomhue
       "colorscheme onedark
       "colorscheme falcon
-      colorscheme NeoSolarized
+      "colorscheme NeoSolarized
       "colorscheme horizon
       "colorscheme tokyonight-storm
       "colorscheme lackluster-hack
-      "colorscheme cyberdream
+      colorscheme cyberdream
       "colorscheme kanagawa
       "colorscheme kanagawa-paper-ink
       "colorscheme kanagawa-dragon
