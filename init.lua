@@ -53,14 +53,14 @@ if vim.g.vscode then
 else
   -- vscode emulation
   --
-  function goto_next_reference(wrap)
+  local function goto_next_reference(wrap)
     if wrap == nil then
       wrap = vim.o.wrapscan
       end
     require('illuminate.goto').goto_next_reference(wrap)
   end
 
-  function goto_prev_reference(wrap)
+  local function goto_prev_reference(wrap)
     if wrap == nil then
       wrap = vim.o.wrapscan
     end
