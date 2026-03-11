@@ -71,5 +71,7 @@ else
   vim.keymap.set('n', '<S-F7>', goto_prev_reference, { desc = 'Prev Occurence' })
   -- alacritty workaround (check with Insert-Mode:Ctrl-V and then S-F7)
   vim.keymap.set('n', '<F19>', goto_prev_reference, { desc = 'Prev Occurence' })
+
+  require("config.markdown")
 end
 
