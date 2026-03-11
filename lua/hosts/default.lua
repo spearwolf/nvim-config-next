@@ -13,7 +13,7 @@ if not vim.g.vscode then
       "colorscheme minicyan
       "colorscheme minischeme
       "colorscheme randomhue
-      colorscheme onedark
+      "colorscheme onedark
       "colorscheme falcon
       "colorscheme NeoSolarized
       "colorscheme cyberdream
@@ -36,9 +36,12 @@ if not vim.g.vscode then
       "colorscheme cyberdream
       "colorscheme kanagawa
       "colorscheme kanagawa-dragon
-      colorscheme fluoromachine
+      "colorscheme fluoromachine
       "colorscheme lackluster-hack
     ]]
   end
 end
 
+vim.cmd [[
+  colorscheme tokyonight-moon
+]]

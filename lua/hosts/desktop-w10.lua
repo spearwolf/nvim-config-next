@@ -15,21 +15,13 @@ if not vim.g.vscode then
       "colorscheme minicyan
       "colorscheme minischeme
       "colorscheme randomhue
-      "colorscheme onedark
-      "colorscheme falcon
-      "colorscheme NeoSolarized
-      "colorscheme cyberdream
       "colorscheme kanagawa
       "colorscheme kanagawa-dragon
       "colorscheme fluoromachine
-      "colorscheme lackluster-hack
-      "colorscheme nordic
       "colorscheme nordfox
-      "colorscheme kanagawa-paper-ink
-      "colorscheme witch-dark
-      "colorscheme melange
-      colorscheme tokyonight-night
+      "colorscheme tokyonight-night
       "colorscheme tokyonight-storm
+      colorscheme tokyonight-moon
       "colorscheme horizon
     ]]
   else
@@ -39,21 +31,15 @@ if not vim.g.vscode then
       "colorscheme minicyan
       "colorscheme minischeme
       "colorscheme randomhue
-      "colorscheme onedark
-      "colorscheme falcon
       "colorscheme NeoSolarized
-      "colorscheme horizon
       "colorscheme tokyonight-storm
-      "colorscheme lackluster-hack
-      colorscheme cyberdream
+      "colorscheme cyberdream
       "colorscheme kanagawa
       "colorscheme kanagawa-paper-ink
       "colorscheme kanagawa-dragon
       "colorscheme fluoromachine
-      "colorscheme melange
-      "colorscheme dracula
+      colorscheme dracula
       "colorscheme dayfox
-      "colorscheme witch-light
     ]]
   end
 end
