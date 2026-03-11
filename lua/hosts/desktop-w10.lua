@@ -21,8 +21,9 @@ if not vim.g.vscode then
       "colorscheme nordfox
       "colorscheme tokyonight-night
       "colorscheme tokyonight-storm
-      colorscheme tokyonight-moon
+      "colorscheme tokyonight-moon
       "colorscheme horizon
+      colorscheme evergarden
     ]]
   else
     -- nvim -----------------------------------------
@@ -38,8 +39,9 @@ if not vim.g.vscode then
       "colorscheme kanagawa-paper-ink
       "colorscheme kanagawa-dragon
       "colorscheme fluoromachine
-      colorscheme dracula
+      "colorscheme dracula
       "colorscheme dayfox
+      colorscheme vague
     ]]
   end
 end
