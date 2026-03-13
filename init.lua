@@ -73,5 +73,9 @@ else
   vim.keymap.set('n', '<F19>', goto_prev_reference, { desc = 'Prev Occurence' })
 
   require("config.markdown")
+
+  vim.g.copilot_no_tab_map = true
+  vim.g.copilot_assume_mapped = true
+  vim.api.nvim_set_keymap("i", "<C-Right>", 'copilot#Accept("<CR>")', { silent = true, expr = true })
 end
 
