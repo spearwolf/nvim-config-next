@@ -23,12 +23,15 @@ if not vim.g.vscode then
       "colorscheme tokyonight-storm
       "colorscheme tokyonight-moon
       "colorscheme horizon
-      colorscheme evergarden
+      "colorscheme evergarden
+      colorscheme vague
     ]]
   else
     -- nvim -----------------------------------------
     --
     vim.cmd [[
+      set nonumber
+
       "colorscheme minicyan
       "colorscheme minischeme
       "colorscheme randomhue
@@ -41,7 +44,9 @@ if not vim.g.vscode then
       "colorscheme fluoromachine
       "colorscheme dracula
       "colorscheme dayfox
-      colorscheme vague
+      "colorscheme vague
+      "colorscheme carbonfox
+      colorscheme nightfox
     ]]
   end
 end

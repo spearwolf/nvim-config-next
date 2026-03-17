@@ -2,7 +2,7 @@ require("config.common")
 require("config.lazy")
 require("utils")
 
-local ok, _ = pcall(require, 'hosts.' .. hostname())
+local ok, _ = pcall(require, 'hosts.' .. get_hostname())
 if not ok then
   require('hosts.default')
 end
@@ -10,20 +10,6 @@ end
 vim.cmd [[
   source $HOME/.config/nvim/vim/keys.vim
 ]]
-
--- if not vim.g.vscode and not vim.g.neovide then
---   vim.g.clipboard = {
---     name = 'OSC 52',
---     copy = {
---       ['+'] = require('vim.ui.clipboard.osc52').copy('+'),
---       ['*'] = require('vim.ui.clipboard.osc52').copy('*'),
---     },
---     paste = {
---       ['+'] = require('vim.ui.clipboard.osc52').paste('+'),
---       ['*'] = require('vim.ui.clipboard.osc52').paste('*'),
---     },
---   }
--- end
 
 local lsp_rename = function()
   vim.lsp.buf.rename();
