@@ -121,15 +121,17 @@ return {
 
     null_ls.setup({
       on_attach = function(client, bufnr)
-        if client.supports_method("textDocument/formatting") then
+        if client.supports_method("textDocument/formatting", { bufnr = bufnr }) then
           vim.keymap.set("n", "<Leader>f", function()
-            vim.lsp.buf.format({ bufnr = vim.api.nvim_get_current_buf() })
+            -- vim.lsp.buf.format({ bufnr = vim.api.nvim_get_current_buf() })
+            vim.lsp.buf.format({ bufnr = bufnr })
           end, { buffer = bufnr, desc = "[lsp] format" })
         end
 
-        if client.supports_method("textDocument/rangeFormatting") then
+        if client.supports_method("textDocument/rangeFormatting", { bufnr = bufnr }) then
           vim.keymap.set("x", "<Leader>f", function()
-            vim.lsp.buf.format({ bufnr = vim.api.nvim_get_current_buf() })
+            -- vim.lsp.buf.format({ bufnr = vim.api.nvim_get_current_buf() })
+            vim.lsp.buf.format({ bufnr = bufnr })
           end, { buffer = bufnr, desc = "[lsp] format" })
         end
       end,

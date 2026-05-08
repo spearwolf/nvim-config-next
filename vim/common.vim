@@ -6,7 +6,7 @@ if exists('g:vscode')
   set foldmethod=marker
 else
   set foldmethod=expr
-  set foldexpr=nvim_treesitter#foldexpr()
+  set foldexpr=v:lua.vim.treesitter.foldexpr()
 endif
 set nofoldenable " Disable folding at startup.
 

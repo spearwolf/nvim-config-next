@@ -14,6 +14,7 @@ Personal Neovim configuration, hand-built on top of [lazy.nvim](https://lazy.fol
   npm i -g neovim @vtsls/language-server
   ```
 - Most LSP servers (`vtsls`, `lua_ls`, `astro`, `eslint`, `tailwindcss`, `ts_ls`) are auto-installed via `mason-lspconfig` (`ensure_installed` + `automatic_installation`). External CLIs `eslint` and `prettier` must be resolvable on `PATH` for the `none-ls` integration.
+- Tree-sitter parsers are managed by `romus204/tree-sitter-manager.nvim` (see `lua/plugins/tree-sitter-manager.lua`). It needs the `tree-sitter` CLI, `git`, and a C compiler (`gcc`/`clang`) on `PATH` to compile parsers. With `auto_install = true`, missing parsers are fetched lazily; `:TSManager` opens the UI (i/x/u/r/q).
 - `lazy-lock.json` is gitignored — plugin versions are not pinned in this repo.
 
 ## Load order & entry points
