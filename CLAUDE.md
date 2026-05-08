@@ -13,7 +13,7 @@ Personal Neovim configuration, hand-built on top of [lazy.nvim](https://lazy.fol
   ```sh
   npm i -g neovim @vtsls/language-server
   ```
-- Most LSP servers (`vtsls`, `lua_ls`, `astro`, `eslint`, `tailwindcss`, `ts_ls`) are auto-installed via `mason-lspconfig` (`ensure_installed` + `automatic_installation`). External CLIs `eslint` and `prettier` must be resolvable on `PATH` for the `none-ls` integration.
+- Most LSP servers (`vtsls`, `lua_ls`, `astro`, `eslint`, `tailwindcss`, `ts_ls`) are auto-installed via `mason-lspconfig` (`ensure_installed` + `automatic_installation`). External CLIs `eslint` (via `none-ls` + `MunifTanjim/eslint.nvim`) and `prettier` (via `conform.nvim`) must be resolvable on `PATH`.
 - Tree-sitter parsers are managed by `romus204/tree-sitter-manager.nvim` (see `lua/plugins/tree-sitter-manager.lua`). It needs the `tree-sitter` CLI, `git`, and a C compiler (`gcc`/`clang`) on `PATH` to compile parsers. With `auto_install = true`, missing parsers are fetched lazily; `:TSManager` opens the UI (i/x/u/r/q).
 - `lazy-lock.json` is gitignored — plugin versions are not pinned in this repo.
 
@@ -44,8 +44,9 @@ When adding a new plugin spec, decide explicitly whether it should run in VSCode
 - Uses Neovim 0.11+ `vim.lsp.config(...)` / `vim.lsp.enable(...)` API, not the legacy `lspconfig.<server>.setup{}` form.
 - `astro` server resolves its `tsdk` dynamically via `get_typescript_server_path(root_dir)`: prefers project-local `node_modules/typescript/lib`, falls back to the global npm prefix's `typescript/lib`. If you change TS resolution, update this function.
 - `clangd` is configured with `offsetEncoding = utf-16` to avoid mixed-encoding warnings.
-- `none-ls` (the maintained fork of null-ls) wires up Prettier and ESLint via `MunifTanjim/prettier.nvim` and `MunifTanjim/eslint.nvim`. Prettier's `cli_options` are the source of truth for formatting style — edit them here, not in a `.prettierrc`.
-- `<Leader>f` formats via `vim.lsp.buf.format` (registered in `null_ls.setup.on_attach`).
+- ESLint code actions & diagnostics run through `none-ls` + `MunifTanjim/eslint.nvim` (configured in `lspconfig.lua`).
+- Prettier formatting is handled by `conform.nvim` (`lua/plugins/conform.lua`). The `prepend_args` list there is the source of truth for formatting style — edit CLI flags there, not in a `.prettierrc`.
+- `<Leader>f` formats the buffer via `conform.format({ async = true, lsp_format = "fallback" })`.
 - `<leader>rn` rename, `<leader>ca` code action — set in `init.lua`, not in `lspconfig.lua`.
 
 ## Style & encoding

@@ -1,3 +1,4 @@
+require("config.compat")
 require("config.common")
 require("config.lazy")
 require("utils")
