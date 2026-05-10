@@ -66,3 +66,5 @@ else
   vim.api.nvim_set_keymap("i", "<C-Right>", 'copilot#Accept("<CR>")', { silent = true, expr = true })
 end
 
+vim.g.neovide_input_ime = false
+
