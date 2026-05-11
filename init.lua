@@ -17,10 +17,9 @@ vim.opt.sessionoptions = "blank,buffers,curdir,folds,help,tabpages,winsize,winpo
 vim.opt.termguicolors = true
 vim.opt.timeoutlen = vim.g.vscode and 1000 or 500
 
-require("config.lazy")
+vim.pack.add({
+  'https://github.com/neovim/nvim-lspconfig',
+  'https://github.com/vague-theme/vague.nvim',
+})
 
---- lazy loaded
-
-vim.cmd [[
-  colorscheme vague
-]]
+vim.cmd.colorscheme('vague')
