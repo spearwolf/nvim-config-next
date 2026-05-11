@@ -22,6 +22,7 @@ if not vim.g.vscode then
   vim.pack.add({
     'https://github.com/neovim/nvim-lspconfig',
     'https://github.com/vague-theme/vague.nvim',
+    'https://github.com/folke/tokyonight.nvim',
     'https://github.com/stevearc/aerial.nvim',
     'https://github.com/Saghen/blink.lib',
     { src = 'https://github.com/Saghen/blink.cmp', version = vim.version.range('*') },
@@ -30,7 +31,11 @@ if not vim.g.vscode then
     'https://github.com/akinsho/bufferline.nvim',
     'https://github.com/RRethy/vim-illuminate',
     'https://github.com/folke/which-key.nvim',
-    'https://github.com/nvim-tree/nvim-tree.lua',
+    -- 'https://github.com/nvim-tree/nvim-tree.lua',
+    'https://github.com/nvim-lua/plenary.nvim',
+    'https://github.com/nvim-telescope/telescope.nvim',
+    'https://github.com/MunifTanjim/nui.nvim',
+    'https://github.com/nvim-neo-tree/neo-tree.nvim',
   })
 
   if vim.g.neovide then
@@ -38,7 +43,12 @@ if not vim.g.vscode then
       set guifont=JetBrainsMono_Nerd_Font,Noto_Color_Emoji:h11
       let g:neovide_opacity = 0.95
     ]]
-    vim.cmd.colorscheme('vague')
+    -- vim.cmd.colorscheme('vague')
+    vim.cmd.colorscheme('tokyonight-night')
+    -- vim.cmd.colorscheme('tokyonight-storm')
+    -- vim.cmd.colorscheme('tokyonight-day')
+    -- vim.cmd.colorscheme('tokyonight-moon')
+    -- vim.cmd.colorscheme('tokyonight')
   else
     vim.cmd.colorscheme('vague')
   end
@@ -48,7 +58,9 @@ if not vim.g.vscode then
   require('plugins.lualine')
   require("bufferline").setup{}
   require('illuminate').configure{}
-  require('plugins.nvim-tree')
+  -- require('plugins.nvim-tree')
+  require('telescope').setup{}
+  require('neo-tree').setup{}
 
   -- === key === ========================================== === --
 
@@ -85,13 +97,20 @@ if not vim.g.vscode then
 
     " Tabs
     nnoremap <M-S-t> <cmd>tabnew<cr>
-    map <silent> <M-S-w> <Esc>:tabclose<CR>
-    map <silent> <M-S-Left> <Esc>:tabprevious<CR>
-    map <silent> <M-S-Right> <Esc>:tabnext<CR>
+    map <silent> <M-S-w> <Esc>:tabclose<cr>
+    map <silent> <M-S-Left> <Esc>:tabprevious<cr>
+    map <silent> <M-S-Right> <Esc>:tabnext<cr>
 
-    "nnoremap <C-S-p> <cmd>Telescope aerial<cr>
-    "nnoremap <M-S-p> <cmd>Telescope buffers<cr>
+    nnoremap <C-p> <cmd>Telescope find_files<cr>
+    nnoremap <C-S-p> <cmd>Telescope aerial<cr>
+    nnoremap <M-S-p> <cmd>Telescope buffers<cr>
   ]]
+
+  vim.keymap.set("n", "<F3>", "<cmd>Neotree toggle<cr>")
+
+  local builtin = require('telescope.builtin')
+  vim.keymap.set('n', '<C-/>', builtin.live_grep, { desc = 'Telescope live grep' })
+  vim.keymap.set('n', '<C-?>', builtin.help_tags, { desc = 'Telescope help tags' })
 
   require("which-key")
 
