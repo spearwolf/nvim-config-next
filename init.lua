@@ -29,6 +29,8 @@ if not vim.g.vscode then
     'https://github.com/nvim-lualine/lualine.nvim',
     'https://github.com/akinsho/bufferline.nvim',
     'https://github.com/RRethy/vim-illuminate',
+    'https://github.com/folke/which-key.nvim',
+    'https://github.com/nvim-tree/nvim-tree.lua',
   })
 
   if vim.g.neovide then
@@ -46,6 +48,7 @@ if not vim.g.vscode then
   require('plugins.lualine')
   require("bufferline").setup{}
   require('illuminate').configure{}
+  require('plugins.nvim-tree')
 
   -- === key === ========================================== === --
 
@@ -89,6 +92,8 @@ if not vim.g.vscode then
     "nnoremap <C-S-p> <cmd>Telescope aerial<cr>
     "nnoremap <M-S-p> <cmd>Telescope buffers<cr>
   ]]
+
+  require("which-key")
 
   -- === -------------------------------------------------- === --
 
