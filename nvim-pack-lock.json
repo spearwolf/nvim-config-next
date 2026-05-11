@@ -13,9 +13,17 @@
       "rev": "f29d8bac6549bc1e7d699c83f680823d7def98bd",
       "src": "https://github.com/Saghen/blink.lib"
     },
+    "lualine.nvim": {
+      "rev": "131a558e13f9f28b15cd235557150ccb23f89286",
+      "src": "https://github.com/nvim-lualine/lualine.nvim"
+    },
     "nvim-lspconfig": {
       "rev": "451d4ef9abd4f0f08e379ef0d55d1c391b6125a7",
       "src": "https://github.com/neovim/nvim-lspconfig"
+    },
+    "nvim-web-devicons": {
+      "rev": "2795c26c916bb3c57dde308b82be51971fa92747",
+      "src": "https://github.com/nvim-tree/nvim-web-devicons"
     },
     "vague.nvim": {
       "rev": "fd58046b9d64259d9785e4aeb6d6f494c6943cad",

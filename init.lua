@@ -23,10 +23,13 @@ vim.pack.add({
   'https://github.com/stevearc/aerial.nvim',
   'https://github.com/Saghen/blink.lib',
   { src = 'https://github.com/Saghen/blink.cmp', version = vim.version.range('*') },
+  'https://github.com/nvim-tree/nvim-web-devicons',
+  'https://github.com/nvim-lualine/lualine.nvim'
 })
 
 vim.cmd.colorscheme('vague')
 
 require('plugins.aerial')
 require('plugins.blink')
+require('plugins.lualine')
 
