@@ -23,6 +23,7 @@ if not vim.g.vscode then
     'https://github.com/neovim/nvim-lspconfig',
     'https://github.com/vague-theme/vague.nvim',
     'https://github.com/folke/tokyonight.nvim',
+    'https://github.com/rebelot/kanagawa.nvim',
     'https://github.com/stevearc/aerial.nvim',
     'https://github.com/Saghen/blink.lib',
     { src = 'https://github.com/Saghen/blink.cmp', version = vim.version.range('*') },
@@ -42,15 +43,25 @@ if not vim.g.vscode then
     vim.cmd [[
       set guifont=JetBrainsMono_Nerd_Font,Noto_Color_Emoji:h11
       let g:neovide_opacity = 0.95
+      " Always show the signcolumn
+      set signcolumn=yes
+      " Always show line numbers
+      set number
     ]]
-    -- vim.cmd.colorscheme('vague')
-    vim.cmd.colorscheme('tokyonight-night')
-    -- vim.cmd.colorscheme('tokyonight-storm')
+    -- vim.cmd.colorscheme('kanagawa')
+    -- vim.cmd.colorscheme('kanagawa-dragon')
+    -- vim.cmd.colorscheme('kanagawa-lotus')
+    -- vim.cmd.colorscheme('kanagawa-wave')
+    vim.cmd.colorscheme('vague')
+  else
+    vim.cmd [[
+      set signcolumn=yes
+    ]]
+    -- vim.cmd.colorscheme('tokyonight')
     -- vim.cmd.colorscheme('tokyonight-day')
     -- vim.cmd.colorscheme('tokyonight-moon')
-    -- vim.cmd.colorscheme('tokyonight')
-  else
-    vim.cmd.colorscheme('vague')
+    vim.cmd.colorscheme('tokyonight-night')
+    -- vim.cmd.colorscheme('tokyonight-storm')
   end
 
   require('plugins.aerial')
