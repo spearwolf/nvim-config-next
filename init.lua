@@ -37,6 +37,9 @@ if not vim.g.vscode then
     'https://github.com/nvim-telescope/telescope.nvim',
     'https://github.com/MunifTanjim/nui.nvim',
     'https://github.com/nvim-neo-tree/neo-tree.nvim',
+    'https://github.com/MeanderingProgrammer/render-markdown.nvim',
+    -- { src = "https://www.github.com/olimorris/codecompanion.nvim", version = vim.version.range("^19.0.0") },
+    'https://github.com/github/copilot.vim'
   })
 
   if vim.g.neovide then
@@ -72,6 +75,25 @@ if not vim.g.vscode then
   -- require('plugins.nvim-tree')
   require('telescope').setup{}
   require('neo-tree').setup{}
+  require('render-markdown').setup{}
+  -- require("codecompanion").setup({
+  --   interactions = {
+  --     inline = {
+  --       adapter = "claude_code",
+  --     },
+  --     cli = {
+  --       agent = "claude_code",
+  --       agents = {
+  --         claude_code = {
+  --           cmd = "claude",
+  --           args = {},
+  --           description = "Claude Code CLI",
+  --           provider = "terminal",
+  --         },
+  --       },
+  --     },
+  --   },
+  -- })
 
   -- === key === ========================================== === --
 
