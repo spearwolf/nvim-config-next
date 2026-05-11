@@ -17,19 +17,79 @@ vim.opt.sessionoptions = "blank,buffers,curdir,folds,help,tabpages,winsize,winpo
 vim.opt.termguicolors = true
 vim.opt.timeoutlen = vim.g.vscode and 1000 or 500
 
-vim.pack.add({
-  'https://github.com/neovim/nvim-lspconfig',
-  'https://github.com/vague-theme/vague.nvim',
-  'https://github.com/stevearc/aerial.nvim',
-  'https://github.com/Saghen/blink.lib',
-  { src = 'https://github.com/Saghen/blink.cmp', version = vim.version.range('*') },
-  'https://github.com/nvim-tree/nvim-web-devicons',
-  'https://github.com/nvim-lualine/lualine.nvim'
-})
+if not vim.g.vscode then
 
-vim.cmd.colorscheme('vague')
+  vim.pack.add({
+    'https://github.com/neovim/nvim-lspconfig',
+    'https://github.com/vague-theme/vague.nvim',
+    'https://github.com/stevearc/aerial.nvim',
+    'https://github.com/Saghen/blink.lib',
+    { src = 'https://github.com/Saghen/blink.cmp', version = vim.version.range('*') },
+    'https://github.com/nvim-tree/nvim-web-devicons',
+    'https://github.com/nvim-lualine/lualine.nvim',
+    'https://github.com/akinsho/bufferline.nvim',
+    'https://github.com/RRethy/vim-illuminate',
+  })
 
-require('plugins.aerial')
-require('plugins.blink')
-require('plugins.lualine')
+  if vim.g.neovide then
+    vim.cmd [[
+      set guifont=JetBrainsMono_Nerd_Font,Noto_Color_Emoji:h11
+      let g:neovide_opacity = 0.95
+    ]]
+    vim.cmd.colorscheme('vague')
+  else
+    vim.cmd.colorscheme('vague')
+  end
 
+  require('plugins.aerial')
+  require('plugins.blink')
+  require('plugins.lualine')
+  require("bufferline").setup{}
+  require('illuminate').configure{}
+
+  -- === key === ========================================== === --
+
+  -- Move Lines
+  vim.keymap.set("n", "<A-j>", "<cmd>m .+1<cr>==", { desc = "Move Down" })
+  vim.keymap.set("n", "<A-k>", "<cmd>m .-2<cr>==", { desc = "Move Up" })
+  vim.keymap.set("i", "<A-j>", "<esc><cmd>m .+1<cr>==gi", { desc = "Move Down" })
+  vim.keymap.set("i", "<A-k>", "<esc><cmd>m .-2<cr>==gi", { desc = "Move Up" })
+  vim.keymap.set("v", "<A-j>", ":m '>+1<cr>gv=gv", { desc = "Move Down" })
+  vim.keymap.set("v", "<A-k>", ":m '<-2<cr>gv=gv", { desc = "Move Up" })
+
+  vim.cmd [[
+    " Copy'n'Paste
+    nmap <silent> <C-S-c> "+y
+    vmap <silent> <C-S-c> "+y
+    map <silent> <C-S-v> "+p
+    imap <silent> <C-S-v> <Esc>"+pa
+
+    " Copy to clipboard
+    vnoremap <leader>y "+y
+    nnoremap <leader>Y "+yg_
+    nnoremap <leader>y "+y
+    nnoremap <leader>yy "+yy
+
+    " Paste from clipboard
+    nnoremap <leader>p "+p
+    nnoremap <leader>P "+P
+    vnoremap <leader>p "+p
+    vnoremap <leader>P "+P
+
+    " Home + End
+    nmap <silent> <Home> gg
+    nmap <silent> <End> G
+
+    " Tabs
+    nnoremap <M-S-t> <cmd>tabnew<cr>
+    map <silent> <M-S-w> <Esc>:tabclose<CR>
+    map <silent> <M-S-Left> <Esc>:tabprevious<CR>
+    map <silent> <M-S-Right> <Esc>:tabnext<CR>
+
+    "nnoremap <C-S-p> <cmd>Telescope aerial<cr>
+    "nnoremap <M-S-p> <cmd>Telescope buffers<cr>
+  ]]
+
+  -- === -------------------------------------------------- === --
+
+end -- not vscode
