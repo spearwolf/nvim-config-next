@@ -20,6 +20,10 @@ vim.opt.timeoutlen = vim.g.vscode and 1000 or 500
 vim.pack.add({
   'https://github.com/neovim/nvim-lspconfig',
   'https://github.com/vague-theme/vague.nvim',
+  'https://github.com/stevearc/aerial.nvim',
 })
 
 vim.cmd.colorscheme('vague')
+
+require('plugins.aerial')
+
