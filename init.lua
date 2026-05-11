@@ -2,7 +2,7 @@
 -- created by spearwolf, may'26
 
 -- recommended setup (outside of neovim, inside your terminal):
--- $ npm i -g neovim
+-- $ npm i -g neovim tree-sitter-cli
 
 vim.g.mapleader = ","
 vim.g.maplocalleader = ","
@@ -21,9 +21,12 @@ vim.pack.add({
   'https://github.com/neovim/nvim-lspconfig',
   'https://github.com/vague-theme/vague.nvim',
   'https://github.com/stevearc/aerial.nvim',
+  'https://github.com/Saghen/blink.lib',
+  { src = 'https://github.com/Saghen/blink.cmp', version = vim.version.range('*') },
 })
 
 vim.cmd.colorscheme('vague')
 
 require('plugins.aerial')
+require('plugins.blink')
 
