@@ -61,7 +61,8 @@ if not vim.g.vscode then
     -- vim.cmd.colorscheme('kanagawa-dragon')
     -- vim.cmd.colorscheme('kanagawa-lotus')
     -- vim.cmd.colorscheme('kanagawa-wave')
-    vim.cmd.colorscheme("vague")
+    vim.cmd.colorscheme("tokyonight-storm")
+    -- vim.cmd.colorscheme("vague")
 
     vim.g.neovide_input_ime = false
   else
