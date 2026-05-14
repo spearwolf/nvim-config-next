@@ -34,18 +34,19 @@ if not vim.g.vscode then
     "https://github.com/akinsho/bufferline.nvim",
     "https://github.com/RRethy/vim-illuminate",
     "https://github.com/folke/which-key.nvim",
+    -- 'https://github.com/nvim-tree/nvim-tree.lua',
     "https://github.com/nvim-lua/plenary.nvim",
     "https://github.com/nvim-telescope/telescope.nvim",
     "https://github.com/MunifTanjim/nui.nvim",
     "https://github.com/nvim-neo-tree/neo-tree.nvim",
     "https://github.com/MeanderingProgrammer/render-markdown.nvim",
+    -- { src = "https://www.github.com/olimorris/codecompanion.nvim", version = vim.version.range("^19.0.0") },
     "https://github.com/github/copilot.vim",
     "https://github.com/lewis6991/gitsigns.nvim",
     "https://github.com/stevearc/conform.nvim",
+    -- "https://github.com/kosayoda/nvim-lightbulb",
     "https://github.com/lewis6991/satellite.nvim",
     "https://github.com/folke/trouble.nvim",
-    "https://github.com/folke/lazydev.nvim",
-    "https://github.com/RaafatTurki/corn.nvim",
   })
 
   if vim.g.neovide then
@@ -79,17 +80,37 @@ if not vim.g.vscode then
   require("plugins.aerial")
   require("plugins.blink")
   require("plugins.lualine")
-  require("bufferline").setup()
-  require("illuminate").configure()
+  require("bufferline").setup({})
+  require("illuminate").configure({})
+  -- require('plugins.nvim-tree')
   require("telescope").setup({})
   require("neo-tree").setup({})
-  require("render-markdown").setup()
-  require("gitsigns").setup()
+  require("render-markdown").setup({})
+  -- require("codecompanion").setup({
+  --   interactions = {
+  --     inline = {
+  --       adapter = "claude_code",
+  --     },
+  --     cli = {
+  --       agent = "claude_code",
+  --       agents = {
+  --         claude_code = {
+  --           cmd = "claude",
+  --           args = {},
+  --           description = "Claude Code CLI",
+  --           provider = "terminal",
+  --         },
+  --       },
+  --     },
+  --   },
+  -- })
+  require("gitsigns").setup({})
   require("plugins.conform")
-  require("satellite").setup()
-  require("plugins.trouble")
-  require("plugins.lazydev")
-  require("plugins.corn")
+  -- require("nvim-lightbulb").setup({
+  --   autocmd = { enabled = true },
+  -- })
+  require("satellite").setup({})
+  require("trouble").setup({})
 
   -- === key === ========================================== === --
 
@@ -136,7 +157,6 @@ if not vim.g.vscode then
   ]])
 
   vim.keymap.set("n", "<F3>", "<cmd>Neotree toggle<cr>")
-  vim.keymap.set("n", "<F4>", "<cmd>Trouble toggle diagnostics<cr>")
 
   local builtin = require("telescope.builtin")
   vim.keymap.set("n", "<C-/>", builtin.live_grep, { desc = "Telescope live grep" })
