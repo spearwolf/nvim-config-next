@@ -46,23 +46,53 @@ if not vim.g.vscode then
     "https://github.com/folke/trouble.nvim",
     "https://github.com/folke/lazydev.nvim",
     "https://github.com/RaafatTurki/corn.nvim",
+    { src = "https://github.com/catppuccin/nvim", name = "catppuccin" },
+    "https://github.com/navarasu/onedark.nvim",
+    "https://github.com/EdenEast/nightfox.nvim",
+    "https://github.com/scottmckendry/cyberdream.nvim",
+    "https://github.com/maxmx03/fluoromachine.nvim",
+  })
+
+  require("onedark").setup({
+    style = "deep",
+    -- style = "darker",
+    -- style = "warmer",
+  })
+
+  require("fluoromachine").setup({
+    -- theme = "fluoromachine",
+    theme = "retrowave",
+    -- theme = "delta",
+    transparent = false,
+  })
+
+  require("cyberdream").setup({
+    variant = "light",
+    transparent = false,
+    saturation = 0.7,
+    italic_comments = false,
+    hide_fillchars = false,
+    terminal_colors = true,
+    cache = true,
   })
 
   if vim.g.neovide then
     vim.cmd([[
       set guifont=JetBrainsMono_Nerd_Font,Noto_Color_Emoji:h11
       let g:neovide_opacity = 0.95
-      " Always show the signcolumn
       set signcolumn=yes
-      " Always show line numbers
       set number
     ]])
     -- vim.cmd.colorscheme('kanagawa')
     -- vim.cmd.colorscheme('kanagawa-dragon')
     -- vim.cmd.colorscheme('kanagawa-lotus')
     -- vim.cmd.colorscheme('kanagawa-wave')
-    vim.cmd.colorscheme("tokyonight-storm")
+    -- vim.cmd.colorscheme("tokyonight-storm")
     -- vim.cmd.colorscheme("vague")
+    -- vim.cmd.colorscheme("catppuccin")
+    -- vim.cmd.colorscheme("catppuccin-latte")
+    require("onedark").load()
+    -- vim.cmd.colorscheme("fluoromachine")
 
     vim.g.neovide_input_ime = false
   else
@@ -72,8 +102,12 @@ if not vim.g.vscode then
     -- vim.cmd.colorscheme('tokyonight')
     -- vim.cmd.colorscheme('tokyonight-day')
     -- vim.cmd.colorscheme('tokyonight-moon')
-    vim.cmd.colorscheme("tokyonight-night")
+    -- vim.cmd.colorscheme("tokyonight-night")
     -- vim.cmd.colorscheme('tokyonight-storm')
+    -- vim.cmd.colorscheme("catppuccin-latte")
+    -- vim.cmd.colorscheme("dayfox")
+    vim.cmd.colorscheme("dawnfox")
+    -- vim.cmd.colorscheme("cyberdream")
   end
 
   require("config.lsp")
@@ -143,9 +177,22 @@ if not vim.g.vscode then
   vim.keymap.set("n", "<C-/>", builtin.live_grep, { desc = "Telescope live grep" })
   vim.keymap.set("n", "<C-?>", builtin.help_tags, { desc = "Telescope help tags" })
 
-  vim.keymap.set("n", "<leader>f", function()
+  vim.keymap.set("n", "<C-S-i>", function()
     require("conform").format({ async = true, lsp_format = "fallback" })
   end, { desc = "Format buffer" })
+
+  -- Inkrementieren (Auswahl erweitern) im Visual/Select-Modus
+  vim.keymap.set("x", "<M-Up>", function()
+    require("vim.treesitter._select").select_parent(vim.v.count1)
+  end, { desc = "Textobjekt inkrementieren" })
+
+  -- Optional: Dekrementieren (Auswahl verkleinern) mit Alt + Pfeiltaste runter
+  vim.keymap.set("x", "<M-Down>", function()
+    require("vim.treesitter._select").select_child(vim.v.count1)
+  end, { desc = "Textobjekt dekrementieren" })
+
+  -- Mappt M-Enter im Visual Mode, um die 'ai' Selektion auszuführen
+  vim.keymap.set("x", "<M-CR>", "ai", { remap = true, desc = "Wähle das gesamte Textobjekt (ai)" })
 
   require("which-key")
 
