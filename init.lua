@@ -54,6 +54,7 @@ if not vim.g.vscode then
   })
 
   require("onedark").setup({
+    -- style = "cool",
     style = "deep",
     -- style = "darker",
     -- style = "warmer",
@@ -61,8 +62,8 @@ if not vim.g.vscode then
 
   require("fluoromachine").setup({
     -- theme = "fluoromachine",
-    theme = "retrowave",
-    -- theme = "delta",
+    -- theme = "retrowave",
+    theme = "delta",
     transparent = false,
   })
 
@@ -73,7 +74,7 @@ if not vim.g.vscode then
     italic_comments = false,
     hide_fillchars = false,
     terminal_colors = true,
-    cache = true,
+    cache = false,
   })
 
   if vim.g.neovide then
@@ -106,8 +107,8 @@ if not vim.g.vscode then
     -- vim.cmd.colorscheme('tokyonight-storm')
     -- vim.cmd.colorscheme("catppuccin-latte")
     -- vim.cmd.colorscheme("dayfox")
-    vim.cmd.colorscheme("dawnfox")
-    -- vim.cmd.colorscheme("cyberdream")
+    -- vim.cmd.colorscheme("dawnfox")
+    vim.cmd.colorscheme("cyberdream")
   end
 
   require("config.lsp")
