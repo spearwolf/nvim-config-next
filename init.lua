@@ -174,20 +174,20 @@ if not vim.g.vscode then
   vim.keymap.set("n", "<F4>", "<cmd>Trouble toggle diagnostics<cr>")
 
   local builtin = require("telescope.builtin")
-  vim.keymap.set("n", "<C-/>", builtin.live_grep, { desc = "Telescope live grep" })
-  vim.keymap.set("n", "<C-?>", builtin.help_tags, { desc = "Telescope help tags" })
+  vim.keymap.set("n", "<leader>f", builtin.live_grep, { desc = "live grep" })
+  vim.keymap.set("n", "<leader>?", builtin.help_tags, { desc = "help tags" })
 
   vim.keymap.set("n", "<C-S-i>", function()
     require("conform").format({ async = true, lsp_format = "fallback" })
   end, { desc = "Format buffer" })
 
   -- Inkrementieren (Auswahl erweitern) im Visual/Select-Modus
-  vim.keymap.set("x", "<M-Up>", function()
+  vim.keymap.set("x", "<C-Up>", function()
     require("vim.treesitter._select").select_parent(vim.v.count1)
   end, { desc = "Textobjekt inkrementieren" })
 
   -- Optional: Dekrementieren (Auswahl verkleinern) mit Alt + Pfeiltaste runter
-  vim.keymap.set("x", "<M-Down>", function()
+  vim.keymap.set("x", "<C-Down>", function()
     require("vim.treesitter._select").select_child(vim.v.count1)
   end, { desc = "Textobjekt dekrementieren" })
 
