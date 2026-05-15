@@ -168,7 +168,8 @@ if not vim.g.vscode then
 
     nnoremap <C-p> <cmd>Telescope find_files<cr>
     nnoremap <C-S-p> <cmd>Telescope aerial<cr>
-    nnoremap <M-S-p> <cmd>Telescope buffers<cr>
+    "nnoremap <M-S-p> <cmd>Telescope buffers<cr>
+    nnoremap <C-Tab> <cmd>Telescope buffers<cr>
   ]])
 
   vim.keymap.set("n", "<F3>", "<cmd>Neotree toggle<cr>")
