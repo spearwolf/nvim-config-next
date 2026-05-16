@@ -77,38 +77,46 @@ if not vim.g.vscode then
     cache = false,
   })
 
-  if vim.g.neovide then
-    vim.cmd([[
+  local function get_hostname()
+    local name = vim.uv.os_gethostname()
+    return name:match("^([^.]+)")
+  end
+
+  local ok, _ = pcall(require, "hosts." .. get_hostname())
+  if not ok then
+    if vim.g.neovide then
+      vim.cmd([[
       set guifont=JetBrainsMono_Nerd_Font,Noto_Color_Emoji:h11
       let g:neovide_opacity = 0.95
       set signcolumn=yes
       set number
     ]])
-    -- vim.cmd.colorscheme('kanagawa')
-    -- vim.cmd.colorscheme('kanagawa-dragon')
-    -- vim.cmd.colorscheme('kanagawa-lotus')
-    -- vim.cmd.colorscheme('kanagawa-wave')
-    -- vim.cmd.colorscheme("tokyonight-storm")
-    -- vim.cmd.colorscheme("vague")
-    -- vim.cmd.colorscheme("catppuccin")
-    -- vim.cmd.colorscheme("catppuccin-latte")
-    require("onedark").load()
-    -- vim.cmd.colorscheme("fluoromachine")
+      -- vim.cmd.colorscheme('kanagawa')
+      -- vim.cmd.colorscheme('kanagawa-dragon')
+      -- vim.cmd.colorscheme('kanagawa-lotus')
+      -- vim.cmd.colorscheme('kanagawa-wave')
+      -- vim.cmd.colorscheme("tokyonight-storm")
+      -- vim.cmd.colorscheme("vague")
+      -- vim.cmd.colorscheme("catppuccin")
+      -- vim.cmd.colorscheme("catppuccin-latte")
+      require("onedark").load()
+      -- vim.cmd.colorscheme("fluoromachine")
 
-    vim.g.neovide_input_ime = false
-  else
-    vim.cmd([[
+      vim.g.neovide_input_ime = false
+    else
+      vim.cmd([[
       set signcolumn=yes
     ]])
-    -- vim.cmd.colorscheme('tokyonight')
-    -- vim.cmd.colorscheme('tokyonight-day')
-    -- vim.cmd.colorscheme('tokyonight-moon')
-    -- vim.cmd.colorscheme("tokyonight-night")
-    -- vim.cmd.colorscheme('tokyonight-storm')
-    -- vim.cmd.colorscheme("catppuccin-latte")
-    -- vim.cmd.colorscheme("dayfox")
-    -- vim.cmd.colorscheme("dawnfox")
-    vim.cmd.colorscheme("cyberdream")
+      -- vim.cmd.colorscheme('tokyonight')
+      -- vim.cmd.colorscheme('tokyonight-day')
+      -- vim.cmd.colorscheme('tokyonight-moon')
+      -- vim.cmd.colorscheme("tokyonight-night")
+      -- vim.cmd.colorscheme('tokyonight-storm')
+      -- vim.cmd.colorscheme("catppuccin-latte")
+      -- vim.cmd.colorscheme("dayfox")
+      -- vim.cmd.colorscheme("dawnfox")
+      vim.cmd.colorscheme("cyberdream")
+    end
   end
 
   require("config.lsp")

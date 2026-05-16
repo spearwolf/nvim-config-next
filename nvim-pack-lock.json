@@ -21,6 +21,10 @@
       "rev": "426dbebe06b5c69fd846ceb17b42e12f890aedf1",
       "src": "https://github.com/catppuccin/nvim"
     },
+    "codecompanion.nvim": {
+      "rev": "60d031862715a77b3655eac724e8926965e47b86",
+      "src": "https://www.github.com/olimorris/codecompanion.nvim"
+    },
     "conform.nvim": {
       "rev": "dca1a190aa85f9065979ef35802fb77131911106",
       "src": "https://github.com/stevearc/conform.nvim"
@@ -36,6 +40,10 @@
     "cyberdream.nvim": {
       "rev": "d1866f5b606896ca530be00bafbd12a3e6bb6efd",
       "src": "https://github.com/scottmckendry/cyberdream.nvim"
+    },
+    "dashboard-nvim": {
+      "rev": "f787e3462c2ee2b6117b17c1aa4ddf66cb6f57fe",
+      "src": "https://github.com/nvimdev/dashboard-nvim"
     },
     "fluoromachine.nvim": {
       "rev": "a279f667168e742df059caf1f1f4daf1de24f4f8",
