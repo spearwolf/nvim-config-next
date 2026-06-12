@@ -91,7 +91,7 @@ if not vim.g.vscode then
       set signcolumn=yes
       set number
     ]])
-      -- vim.cmd.colorscheme('kanagawa')
+      -- vim.cmd.colorscheme("kanagawa")
       -- vim.cmd.colorscheme('kanagawa-dragon')
       -- vim.cmd.colorscheme('kanagawa-lotus')
       -- vim.cmd.colorscheme('kanagawa-wave')
@@ -100,14 +100,13 @@ if not vim.g.vscode then
       -- vim.cmd.colorscheme("catppuccin")
       -- vim.cmd.colorscheme("catppuccin-latte")
       require("onedark").load()
-      -- vim.cmd.colorscheme("fluoromachine")
 
       vim.g.neovide_input_ime = false
     else
       vim.cmd([[
       set signcolumn=yes
     ]])
-      -- vim.cmd.colorscheme('tokyonight')
+      -- vim.cmd.colorscheme("tokyonight")
       -- vim.cmd.colorscheme('tokyonight-day')
       -- vim.cmd.colorscheme('tokyonight-moon')
       -- vim.cmd.colorscheme("tokyonight-night")
@@ -115,7 +114,9 @@ if not vim.g.vscode then
       -- vim.cmd.colorscheme("catppuccin-latte")
       -- vim.cmd.colorscheme("dayfox")
       -- vim.cmd.colorscheme("dawnfox")
-      vim.cmd.colorscheme("cyberdream")
+      -- vim.cmd.colorscheme("cyberdream")
+      -- vim.cmd.colorscheme("vague")
+      vim.cmd.colorscheme("fluoromachine")
     end
   end
 
