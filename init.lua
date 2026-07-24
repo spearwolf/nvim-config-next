@@ -129,7 +129,7 @@ if not vim.g.vscode then
   require("bufferline").setup()
   require("illuminate").configure()
   require("telescope").setup({})
-  require("neo-tree").setup({})
+  require("plugins.neo-tree")
   require("render-markdown").setup()
   require("gitsigns").setup()
   require("plugins.conform")
@@ -183,7 +183,7 @@ if not vim.g.vscode then
     nnoremap <C-Tab> <cmd>Telescope buffers<cr>
   ]])
 
-  vim.keymap.set("n", "<F3>", "<cmd>Neotree toggle<cr>")
+  vim.keymap.set("n", "<F3>", "<cmd>Neotree toggle right<cr>")
   vim.keymap.set("n", "<F4>", "<cmd>Trouble toggle diagnostics<cr>")
 
   local builtin = require("telescope.builtin")
