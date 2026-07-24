@@ -18,9 +18,22 @@ cmp.setup({
   completion = {
     list = {
       selection = {
-        preselect = false,
-        auto_insert = false,
+        preselect = true,
+        auto_insert = true,
       },
+    },
+    documentation = {
+      auto_show = true,
+      auto_show_delay_ms = 1000,
+    },
+  },
+  cmdline = {
+    keymap = {
+      -- Übernimmt den ersten Vorschlag UND führt den Befehl aus:
+      ["<CR>"] = { "select_accept_and_enter", "fallback" },
+
+      -- ODER: Übernimmt den Vorschlag nur in die Zeile (ohne Ausführung):
+      -- ["<CR>"] = { "select_and_accept", "fallback" },
     },
   },
 })

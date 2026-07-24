@@ -61,14 +61,14 @@ if not vim.g.vscode then
   })
 
   require("fluoromachine").setup({
-    theme = "fluoromachine",
+    -- theme = "fluoromachine",
     -- theme = "retrowave",
-    -- theme = "delta",
-    transparent = true,
+    theme = "delta",
+    transparent = false,
   })
 
   require("cyberdream").setup({
-    -- variant = "light",
+    variant = "light",
     transparent = false,
     saturation = 0.7,
     italic_comments = false,
