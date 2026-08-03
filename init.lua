@@ -46,6 +46,7 @@ if not vim.g.vscode then
     "https://github.com/folke/trouble.nvim",
     "https://github.com/folke/lazydev.nvim",
     "https://github.com/RaafatTurki/corn.nvim",
+    "https://github.com/folke/noice.nvim",
     { src = "https://github.com/catppuccin/nvim", name = "catppuccin" },
     "https://github.com/navarasu/onedark.nvim",
     "https://github.com/EdenEast/nightfox.nvim",
@@ -139,6 +140,7 @@ if not vim.g.vscode then
   require("plugins.trouble")
   require("plugins.lazydev")
   require("plugins.corn")
+  require("plugins.noice")
 
   -- === key === ========================================== === --
 
