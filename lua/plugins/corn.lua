@@ -30,12 +30,7 @@ require("corn").setup({
   },
 
   -- icons to use for each diagnostic severity level
-  icons = {
-    error = "💥",
-    warn = "💀",
-    info = "🐸",
-    hint = "👻",
-  },
+  icons = require("config.diagnostic-icons"),
 
   item_preprocess_func = function(item)
     return item
