@@ -117,8 +117,10 @@ if not vim.g.vscode then
       -- vim.cmd.colorscheme("dawnfox")
       -- vim.cmd.colorscheme("cyberdream")
       -- vim.cmd.colorscheme("vague")
-      vim.cmd.colorscheme("fluoromachine")
+      -- vim.cmd.colorscheme("fluoromachine")
+      -- vim.cmd.colorscheme("fluoromachine")
       -- vim.cmd.colorscheme("kanagawa")
+      vim.cmd.colorscheme("cyberdream-muted")
     end
   end
 
