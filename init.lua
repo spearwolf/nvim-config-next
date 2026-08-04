@@ -211,6 +211,12 @@ if not vim.g.vscode then
   -- Mappt M-Enter im Visual Mode, um die 'ai' Selektion auszuführen
   vim.keymap.set("x", "<M-CR>", "ai", { remap = true, desc = "Wähle das gesamte Textobjekt (ai)" })
 
+  -- Comment Toggle (Ctrl-/, im Terminal oft als <C-_> gesendet)
+  vim.keymap.set("n", "<C-/>", "gcc", { remap = true, desc = "Toggle comment line" })
+  vim.keymap.set("n", "<C-_>", "gcc", { remap = true, desc = "Toggle comment line" })
+  vim.keymap.set("v", "<C-/>", "gc", { remap = true, desc = "Toggle comment selection" })
+  vim.keymap.set("v", "<C-_>", "gc", { remap = true, desc = "Toggle comment selection" })
+
   require("which-key")
 
   -- === -------------------------------------------------- === --
