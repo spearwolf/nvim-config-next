@@ -21,6 +21,17 @@ require("noice").setup({
     backend = "nui",
   },
 
+  -- Cmdline-Popup aus der Bildschirmmitte nach unten schieben, horizontal zentriert.
+  -- Prozente rechnet nui gegen (Editorhöhe - Popuphöhe): 100% wäre bündig unten.
+  views = {
+    cmdline_popup = {
+      position = {
+        row = "80%",
+        col = "50%",
+      },
+    },
+  },
+
   notify = {
     enabled = true,
     view = "mini",
