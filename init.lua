@@ -57,8 +57,8 @@ if not vim.g.vscode then
 
   require("onedark").setup({
     -- style = "cool",
-    style = "deep",
-    -- style = "darker",
+    -- style = "deep",
+    style = "darker",
     -- style = "warmer",
   })
 
@@ -98,11 +98,11 @@ if not vim.g.vscode then
       -- vim.cmd.colorscheme('kanagawa-lotus')
       -- vim.cmd.colorscheme('kanagawa-wave')
       -- vim.cmd.colorscheme("tokyonight")
-      -- vim.cmd.colorscheme("tokyonight-storm")
+      vim.cmd.colorscheme("tokyonight-storm")
       -- vim.cmd.colorscheme("vague")
       -- vim.cmd.colorscheme("catppuccin")
       -- vim.cmd.colorscheme("catppuccin-latte")
-      require("onedark").load()
+      -- require("onedark").load()
 
       vim.g.neovide_input_ime = false
     else
@@ -122,7 +122,8 @@ if not vim.g.vscode then
       -- vim.cmd.colorscheme("fluoromachine")
       -- vim.cmd.colorscheme("fluoromachine")
       -- vim.cmd.colorscheme("kanagawa")
-      vim.cmd.colorscheme("cyberdream-muted")
+      -- vim.cmd.colorscheme("cyberdream-muted")
+      vim.cmd.colorscheme("kanagawa-dragon")
     end
   end
 
