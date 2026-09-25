@@ -17,6 +17,14 @@ vim.opt.sessionoptions = "blank,buffers,curdir,folds,help,tabpages,winsize,winpo
 vim.opt.termguicolors = true
 vim.opt.timeoutlen = vim.g.vscode and 1000 or 500
 
+vim.api.nvim_create_autocmd({ "BufRead", "BufNewFile" }, {
+  -- Pfad anpassen (Unterordner inklusive)
+  pattern = vim.fn.expand("~") .. "/.bashrc.d/*",
+  callback = function()
+    vim.bo.filetype = "bash" -- Ziel-Filetype hier eintragen
+  end,
+})
+
 if not vim.g.vscode then
   vim.pack.add({
     "https://github.com/mason-org/mason.nvim",
@@ -57,15 +65,15 @@ if not vim.g.vscode then
 
   require("onedark").setup({
     -- style = "cool",
-    -- style = "deep",
-    style = "darker",
+    style = "deep",
+    -- style = "darker",
     -- style = "warmer",
   })
 
   require("fluoromachine").setup({
-    -- theme = "fluoromachine",
+    theme = "fluoromachine",
     -- theme = "retrowave",
-    theme = "delta",
+    -- theme = "delta",
     transparent = false,
   })
 
@@ -98,11 +106,11 @@ if not vim.g.vscode then
       -- vim.cmd.colorscheme('kanagawa-lotus')
       -- vim.cmd.colorscheme('kanagawa-wave')
       -- vim.cmd.colorscheme("tokyonight")
-      vim.cmd.colorscheme("tokyonight-storm")
+      -- vim.cmd.colorscheme("tokyonight-storm")
       -- vim.cmd.colorscheme("vague")
       -- vim.cmd.colorscheme("catppuccin")
       -- vim.cmd.colorscheme("catppuccin-latte")
-      -- require("onedark").load()
+      require("onedark").load()
 
       vim.g.neovide_input_ime = false
     else
@@ -118,12 +126,12 @@ if not vim.g.vscode then
       -- vim.cmd.colorscheme("dayfox")
       -- vim.cmd.colorscheme("dawnfox")
       -- vim.cmd.colorscheme("cyberdream")
-      -- vim.cmd.colorscheme("vague")
+      vim.cmd.colorscheme("vague")
       -- vim.cmd.colorscheme("fluoromachine")
       -- vim.cmd.colorscheme("fluoromachine")
       -- vim.cmd.colorscheme("kanagawa")
       -- vim.cmd.colorscheme("cyberdream-muted")
-      vim.cmd.colorscheme("kanagawa-dragon")
+      -- vim.cmd.colorscheme("kanagawa-dragon")
     end
   end
 
