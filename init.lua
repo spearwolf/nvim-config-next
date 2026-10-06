@@ -143,7 +143,7 @@ if not vim.g.vscode then
   require("illuminate").configure()
   require("telescope").setup({})
   require("plugins.neo-tree")
-  require("render-markdown").setup()
+  require("plugins.render-markdown")
   require("gitsigns").setup()
   require("plugins.conform")
   require("satellite").setup()
