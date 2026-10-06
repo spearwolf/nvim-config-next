@@ -71,10 +71,10 @@ if not vim.g.vscode then
   })
 
   require("fluoromachine").setup({
-    theme = "fluoromachine",
-    -- theme = "retrowave",
+    -- theme = "fluoromachine",
+    theme = "retrowave",
     -- theme = "delta",
-    transparent = false,
+    transparent = true,
   })
 
   require("cyberdream").setup({
@@ -104,13 +104,14 @@ if not vim.g.vscode then
       -- vim.cmd.colorscheme("kanagawa")
       -- vim.cmd.colorscheme('kanagawa-dragon')
       -- vim.cmd.colorscheme('kanagawa-lotus')
-      -- vim.cmd.colorscheme('kanagawa-wave')
+      -- vim.cmd.colorscheme("kanagawa-wave")
       -- vim.cmd.colorscheme("tokyonight")
       -- vim.cmd.colorscheme("tokyonight-storm")
       -- vim.cmd.colorscheme("vague")
       -- vim.cmd.colorscheme("catppuccin")
       -- vim.cmd.colorscheme("catppuccin-latte")
-      require("onedark").load()
+      vim.cmd.colorscheme("catppuccin-frappe")
+      -- require("onedark").load()
 
       vim.g.neovide_input_ime = false
     else
@@ -126,7 +127,8 @@ if not vim.g.vscode then
       -- vim.cmd.colorscheme("dayfox")
       -- vim.cmd.colorscheme("dawnfox")
       -- vim.cmd.colorscheme("cyberdream")
-      vim.cmd.colorscheme("vague")
+      -- vim.cmd.colorscheme("vague")
+      vim.cmd.colorscheme("cyberdream")
       -- vim.cmd.colorscheme("fluoromachine")
       -- vim.cmd.colorscheme("fluoromachine")
       -- vim.cmd.colorscheme("kanagawa")
