@@ -62,6 +62,7 @@ if not vim.g.vscode then
     "https://github.com/scottmckendry/cyberdream.nvim",
     "https://github.com/maxmx03/fluoromachine.nvim",
     "https://github.com/0x-ximon/acario.nvim",
+    "https://github.com/jonestristand/dune.nvim",
   })
 
   require("onedark").setup({
@@ -111,7 +112,8 @@ if not vim.g.vscode then
       -- vim.cmd.colorscheme("vague")
       -- vim.cmd.colorscheme("catppuccin")
       -- vim.cmd.colorscheme("catppuccin-latte")
-      vim.cmd.colorscheme("catppuccin-frappe")
+      -- vim.cmd.colorscheme("catppuccin-frappe")
+      vim.cmd.colorscheme("dune-atreides")
       -- require("onedark").load()
 
       vim.g.neovide_input_ime = false
@@ -131,7 +133,9 @@ if not vim.g.vscode then
       -- vim.cmd.colorscheme("vague")
       -- vim.cmd.colorscheme("cyberdream")
       -- vim.cmd.colorscheme("acario_dark")
-      vim.cmd.colorscheme("acario_light")
+      -- vim.cmd.colorscheme("acario_light")
+      -- vim.cmd.colorscheme("dune-harkonnen")
+      vim.cmd.colorscheme("dune-tleilaxu")
       -- vim.cmd.colorscheme("fluoromachine")
       -- vim.cmd.colorscheme("fluoromachine")
       -- vim.cmd.colorscheme("kanagawa")
