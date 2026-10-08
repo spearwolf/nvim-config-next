@@ -61,6 +61,7 @@ if not vim.g.vscode then
     "https://github.com/EdenEast/nightfox.nvim",
     "https://github.com/scottmckendry/cyberdream.nvim",
     "https://github.com/maxmx03/fluoromachine.nvim",
+    "https://github.com/0x-ximon/acario.nvim",
   })
 
   require("onedark").setup({
@@ -128,7 +129,9 @@ if not vim.g.vscode then
       -- vim.cmd.colorscheme("dawnfox")
       -- vim.cmd.colorscheme("cyberdream")
       -- vim.cmd.colorscheme("vague")
-      vim.cmd.colorscheme("cyberdream")
+      -- vim.cmd.colorscheme("cyberdream")
+      -- vim.cmd.colorscheme("acario_dark")
+      vim.cmd.colorscheme("acario_light")
       -- vim.cmd.colorscheme("fluoromachine")
       -- vim.cmd.colorscheme("fluoromachine")
       -- vim.cmd.colorscheme("kanagawa")
