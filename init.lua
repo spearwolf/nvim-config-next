@@ -109,11 +109,11 @@ if not vim.g.vscode then
       -- vim.cmd.colorscheme("kanagawa-wave")
       -- vim.cmd.colorscheme("tokyonight")
       -- vim.cmd.colorscheme("tokyonight-storm")
-      -- vim.cmd.colorscheme("vague")
+      vim.cmd.colorscheme("vague")
       -- vim.cmd.colorscheme("catppuccin")
       -- vim.cmd.colorscheme("catppuccin-latte")
       -- vim.cmd.colorscheme("catppuccin-frappe")
-      vim.cmd.colorscheme("dune-atreides")
+      -- vim.cmd.colorscheme("dune-atreides")
       -- require("onedark").load()
 
       vim.g.neovide_input_ime = false
