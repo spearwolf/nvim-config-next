@@ -1,7 +1,7 @@
 if not vim.g.vscode then
   if vim.g.neovide then
     vim.cmd([[
-      set guifont=JetBrainsMono_Nerd_Font,Noto_Color_Emoji:h14
+      set guifont=JetBrainsMono_Nerd_Font,Noto_Color_Emoji:h15
       let g:neovide_opacity = 0.95
       set signcolumn=yes
       set number
