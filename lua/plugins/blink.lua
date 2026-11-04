@@ -29,11 +29,28 @@ cmp.setup({
   },
   cmdline = {
     keymap = {
-      -- Übernimmt den ersten Vorschlag UND führt den Befehl aus:
-      ["<CR>"] = { "select_accept_and_enter", "fallback" },
+      -- Übernimmt den ersten Vorschlag UND führt den Befehl aus — aber nur bei ":".
+      -- In "/" und "?" ist das Menü unsichtbar, Enter würde blind das erste
+      -- Buffer-Wort einsetzen (aus "/0.94" wird "/0.b294bb").
+      ["<CR>"] = {
+        function(c)
+          if vim.fn.getcmdtype() == ":" then
+            return c.select_accept_and_enter()
+          end
+        end,
+        "fallback",
+      },
 
       -- ODER: Übernimmt den Vorschlag nur in die Zeile (ohne Ausführung):
       -- ["<CR>"] = { "select_and_accept", "fallback" },
+    },
+    -- Ghost-Text nur bei ":" — in der Suche rendert noice ihn als Zeichensalat.
+    completion = {
+      ghost_text = {
+        enabled = function()
+          return vim.fn.getcmdtype() == ":"
+        end,
+      },
     },
   },
 })
