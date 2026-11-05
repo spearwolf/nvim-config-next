@@ -1,0 +1,7 @@
+# Neovide-Konfiguration (~/.config/neovide ist ein Symlink auf dieses Verzeichnis).
+
+# Seit 0.17 meldet Neovide beim Start vorübergehend ext_messages/ext_cmdline an, um
+# Startup-Meldungen selbst abzufangen. noice.nvim prüft das synchron in setup(),
+# hält die GUI für einen Konkurrenten und meldet Fehler mitten in init.lua —
+# Ergebnis: »Error in init.lua« plus Hit-Enter-Prompt beim Start.
+startup-message-capture = false
