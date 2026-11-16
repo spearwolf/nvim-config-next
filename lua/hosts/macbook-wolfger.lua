@@ -6,7 +6,9 @@ if not vim.g.vscode then
       set signcolumn=yes
       set number
     ]])
-    vim.cmd.colorscheme("vague")
+    -- vim.cmd.colorscheme("vague")
+    -- vim.cmd.colorscheme("dune-tleilaxu")
+    vim.cmd.colorscheme("kanagawa-dragon")
 
     vim.g.neovide_input_ime = false
   else
