@@ -8,13 +8,15 @@ if not vim.g.vscode then
     ]])
     -- vim.cmd.colorscheme("vague")
     -- vim.cmd.colorscheme("dune-tleilaxu")
-    vim.cmd.colorscheme("kanagawa-dragon")
+    -- vim.cmd.colorscheme("kanagawa-dragon")
+    vim.cmd.colorscheme("fluoromachine")
 
     vim.g.neovide_input_ime = false
   else
     vim.cmd([[
       set signcolumn=yes
     ]])
-    vim.cmd.colorscheme("tokyonight-storm")
+    -- vim.cmd.colorscheme("tokyonight-storm")
+    vim.cmd.colorscheme("onedark")
   end
 end
